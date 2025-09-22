@@ -26,7 +26,7 @@ const projects = [
     description: 'PG Finder is a platform for finding PG\'s in a city',
     tags: ['react', 'tailwind css', 'react-router'],
     image: pg_demo,
-    demo: '#',
+    demo: 'https://pg-finder-9ysu.onrender.com',
     github: 'https://github.com/Abhijeetdev07/pg-finder',
   },
 ]
