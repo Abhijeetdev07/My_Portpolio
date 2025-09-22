@@ -70,7 +70,7 @@ const Hero = () => {
             <div className="flex items-center justify-center space-x-4">
               {/* Social Links */}
               <a 
-                href="www.linkedin.com/in/abhijeetugale07" 
+                href="https://www.linkedin.com/in/abhijeetugale07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"

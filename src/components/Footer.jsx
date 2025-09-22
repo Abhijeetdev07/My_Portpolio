@@ -41,7 +41,7 @@ const Footer = () => {
                 <FaGithub className="w-5 h-5" />
               </a>
               <a
-                href="www.linkedin.com/in/abhijeetugale07"
+                href="https://www.linkedin.com/in/abhijeetugale07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl border border-cyan-400/40 text-cyan-400 flex items-center justify-center hover:bg-cyan-400 hover:text-gray-900 transition-colors"
