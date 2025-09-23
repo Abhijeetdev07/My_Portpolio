@@ -107,7 +107,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="relative mx-auto max-w-6xl rounded-3xl border border-gray-700/60 bg-gradient-to-b from-gray-900/40 to-gray-800/40 backdrop-blur-md"
+          className="relative mx-auto max-w-6xl rounded-3xl overflow-hidden border border-gray-700/60 bg-gradient-to-b from-gray-900/40 to-gray-800/40 backdrop-blur-md"
           style={{ height: `${containerHeight}px` }}
         >
 
