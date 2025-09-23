@@ -14,17 +14,6 @@ const Navbar = () => {
     { name: 'Projects', href: '#projects' },
   ]
 
-  const handleNavClick = (event, href) => {
-    if (!href?.startsWith('#')) return
-    event.preventDefault()
-    const id = href.slice(1)
-    const el = document.getElementById(id)
-    if (!el) return
-    const navOffset = 80
-    const y = el.getBoundingClientRect().top + window.pageYOffset - navOffset
-    window.scrollTo({ top: y, behavior: 'smooth' })
-    setIsMenuOpen(false)
-  }
 
   return (
     <nav className="bg-gray-900/20 backdrop-blur-md shadow-lg fixed w-full top-0 z-50 border-b border-gray-700/50">
@@ -32,7 +21,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-2 group select-none">
+            <a href="#home" className="flex items-center gap-2 group select-none">
                 <span className="px-3 py-1 rounded-lg border border-cyan-400/30 bg-gray-900/40 backdrop-blur-md">
                 <span className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-300 via-cyan-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(0,200,255,0.35)]">
                   Abhijeet
@@ -49,7 +38,6 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   className="text-gray-300 hover:text-cyan-400 px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
-                  onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
@@ -98,7 +86,7 @@ const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 className="text-gray-300 hover:text-cyan-400 block px-3 py-2 text-base font-medium transition-all duration-300 relative group"
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
                 <span className="absolute bottom-0 left-3 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-[calc(100%-1.5rem)]"></span>
