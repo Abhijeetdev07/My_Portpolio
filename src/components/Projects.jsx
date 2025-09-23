@@ -6,20 +6,20 @@ import { motion } from 'framer-motion'
 
 const projects = [
   {
-    title: 'Hospital Management System',
-    description: 'hospital admin, reception, doctor and patient management system',
-    tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: hms_demo,
-    demo: 'https://hospital-management-system-69jx.onrender.com/',
-    github: 'https://github.com/Abhijeetdev07/Hospital-management-system',
-  },
-  {
     title: 'Personal Finance Tracker',
     description: 'Personal finance tracker using MERN stack with CRUD operations,authentication. and data visualization.',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: 'https://smart-finance-uzbk.onrender.com/assets/herosec-DZoufsF8.png',
     demo: 'https://smart-finance-uzbk.onrender.com/',
     github: 'https://github.com/Abhijeetdev07/Personal-finiance-tracker',
+  },
+  {
+    title: 'Hospital Management System',
+    description: 'hospital admin, reception, doctor and patient management system',
+    tags: ['MongoDB', 'Express', 'React', 'Node'],
+    image: hms_demo,
+    demo: 'https://hospital-management-system-69jx.onrender.com/',
+    github: 'https://github.com/Abhijeetdev07/Hospital-management-system',
   },
   {
     title: 'PG Finder (frontend)',
