@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { LuDownload } from "react-icons/lu";
 import resumePdf from '../assets/My-Resume.pdf'
 import { motion } from 'framer-motion'
@@ -56,37 +55,17 @@ const Hero = () => {
             className="space-y-6 max-w-4xl text-center"
           >
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold">Namaste,</h1>
-              <h1 className="text-4xl md:text-6xl font-bold">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">Namaste,</h1>
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 I'm <span className="text-cyan-400">Abhijeet Ugale</span>
                 <span className="text-yellow-400 text-5xl md:text-7xl ml-2">👋</span>
               </h1>
-              <h2 className="text-2xl md:text-4xl text-gray-300 font-medium mt-6">
+              <h2 className="text-2xl md:text-4xl text-gray-300 font-medium mt-6 leading-relaxed">
                 I am <span className="text-cyan-400">{roleText}</span>
                 <span className="animate-pulse text-cyan-400">|</span>
               </h2>
             </div>
 
-            <div className="flex items-center justify-center space-x-4">
-              {/* Social Links */}
-              <a 
-                href="https://www.linkedin.com/in/abhijeetugale07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
-              >
-                <FaLinkedin className="w-6 h-6" />
-              </a>
-
-              <a 
-                href="https://github.com/Abhijeetdev07" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-600 transition-colors"
-              >
-                <FaGithub className="w-6 h-6" />
-              </a>
-            </div>
 
             <div className="flex flex-row flex-wrap gap-4 pt-4 justify-center items-center">
             <a
@@ -104,7 +83,7 @@ const Hero = () => {
             </div>
 
             <div className="pt-6">
-              <p className="text-pink-400 text-lg font-semibold flex items-center justify-center">
+              <p className="text-pink-400 text-lg font-semibold flex items-center justify-center leading-relaxed">
                 <span className="mr-2">🚀</span>
                 Let's build something awesome!
               </p>

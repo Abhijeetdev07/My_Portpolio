@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-gray-300">
                 <FaLocationDot className="text-cyan-400" />
-                <span>Maharashtra, India</span>
+                <span>Chikhli, Maharashtra, India</span>
               </li>
             </ul>
           </div>
