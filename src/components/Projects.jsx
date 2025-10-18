@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import hms_demo from '../assets/hms.png'
 import pg_demo from '../assets/pg_img.png'
+import finc_demo from '../assets/herosec-DZoufsF8.png'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
@@ -9,7 +10,7 @@ const projects = [
     title: 'Personal Finance Tracker',
     description: 'Personal finance tracker using MERN stack with CRUD operations,authentication. and data visualization.',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: 'https://smart-finance-uzbk.onrender.com/assets/herosec-DZoufsF8.png',
+    image: finc_demo,
     demo: 'https://smart-finance-uzbk.onrender.com/',
     github: 'https://github.com/Abhijeetdev07/Personal-finiance-tracker',
   },
