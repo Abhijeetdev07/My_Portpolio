@@ -19,7 +19,7 @@ const projects = [
     description: 'hospital admin, reception, doctor and patient management system',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: hms_demo,
-    demo: 'https://hospital-management-system-69jx.onrender.com/',
+    demo: 'deployment on process',
     github: 'https://github.com/Abhijeetdev07/Hospital-management-system',
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     description: 'PG Finder is a platform for finding PG\'s in a city',
     tags: ['react', 'tailwind css', 'react-router'],
     image: pg_demo,
-    demo: 'https://pg-finder-9ysu.onrender.com',
+    demo: 'deployment on process',
     github: 'https://github.com/Abhijeetdev07/pg-finder',
   },
 ]
