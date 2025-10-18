@@ -81,7 +81,7 @@ const ProjectCard = ({ project, idx }) => {
         ))}
       </div>
       <div className="mt-auto flex items-center gap-3">
-        <a href={project} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 justify-center px-4 py-2 rounded-md bg-cyan-400 text-gray-900 font-semibold hover:bg-cyan-300 transition-colors">
+        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 justify-center px-4 py-2 rounded-md bg-cyan-400 text-gray-900 font-semibold hover:bg-cyan-300 transition-colors">
           Live Demo
           <FaExternalLinkAlt className="w-4 h-4" />
         </a>
