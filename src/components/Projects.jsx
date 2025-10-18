@@ -11,7 +11,7 @@ const projects = [
     description: 'Personal finance tracker using MERN stack with CRUD operations,authentication. and data visualization.',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: finc_demo,
-    demo: 'https://smart-finance-uzbk.onrender.com/',
+    demo: 'https://smart-finance-o4s9.onrender.com/',
     github: 'https://github.com/Abhijeetdev07/Personal-finiance-tracker',
   },
   {
