@@ -43,8 +43,8 @@ const Hero = () => {
     return () => clearTimeout(roleTimer)
   }, [roleText, roleIndex, isRoleDeleting, roles])
   return (
-    <section id="home" className="min-h-screen bg-gray-900 text-white flex items-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section id="home" className="relative min-h-screen bg-black text-white flex items-center overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="flex justify-center">
           {/* Main Content */}
           <motion.div
@@ -57,12 +57,12 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">Namaste,</h1>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                I'm <span className="text-cyan-400">Abhijeet Ugale</span>
+                I'm <span className="text-[#2adb5c]">Abhijeet Ugale</span>
                 <span className="text-yellow-400 text-5xl md:text-7xl ml-2">👋</span>
               </h1>
               <h2 className="text-2xl md:text-4xl text-gray-300 font-medium mt-6 leading-relaxed">
-                I am <span className="text-cyan-400">{roleText}</span>
-                <span className="animate-pulse text-cyan-400">|</span>
+                I am <span className="text-[#2adb5c]">{roleText}</span>
+                <span className="animate-pulse text-[#2adb5c]">|</span>
               </h2>
             </div>
 
@@ -72,11 +72,11 @@ const Hero = () => {
               href="https://github.com/Abhijeetdev07?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-cyan-400 text-gray-900 rounded-lg font-semibold hover:bg-cyan-500 transition-colors flex items-center justify-center animate-bounce"
+              className="px-6 py-3 bg-[#2adb5c] text-gray-900 rounded-lg font-semibold hover:bg-[#2adb5c] transition-colors flex items-center justify-center animate-bounce"
             >
               View Projects
             </a>
-              <a href={resumePdf} download className="border-2 border-cyan-400 text-cyan-400 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-colors flex items-center gap-2">
+              <a href={resumePdf} download className="border-2 border-[#2adb5c] text-[#2adb5c] px-6 py-3 rounded-lg font-semibold hover:bg-[#2adb5c] hover:text-gray-900 transition-colors flex items-center gap-2">
                 <span>Download Resume</span>
                 <LuDownload />
               </a>

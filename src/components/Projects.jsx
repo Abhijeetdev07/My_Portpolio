@@ -1,16 +1,47 @@
 import React, { useState } from 'react'
 import hms_demo from '../assets/hms.png'
 import pg_demo from '../assets/pg_img.png'
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+import thumbnail from '../assets/thumbnail.png'
+import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
+import { BiCodeAlt } from 'react-icons/bi'
+import { 
+  SiMongodb, 
+  SiExpress, 
+} from 'react-icons/si'
 import { motion } from 'framer-motion'
+
+// Technology icon mapping
+const techIcons = {
+  'MongoDB': SiMongodb,
+  'Express': SiExpress,
+  'React': FaReact,
+  'Node': FaNode,
+ 
+}
+
+// Get icon component for a given tech tag
+const getTechIcon = (tag) => {
+  const normalizedTag = tag.toLowerCase()
+  
+  // Direct match
+  if (techIcons[tag]) return techIcons[tag]
+  
+  // Case-insensitive search
+  for (const [key, icon] of Object.entries(techIcons)) {
+    if (key.toLowerCase() === normalizedTag) return icon
+  }
+  
+  // Default icon
+  return BiCodeAlt
+}
 
 const projects = [
   {
     title: 'Personal Finance Tracker',
     description: 'Personal finance tracker using MERN stack with CRUD operations,authentication. and data visualization.',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: 'https://smart-finance-uzbk.onrender.com/assets/herosec-DZoufsF8.png',
-    demo: 'https://smart-finance-uzbk.onrender.com/',
+    image: thumbnail,
+    demo: 'https://smart-finance-o4s9.onrender.com',
     github: 'https://github.com/Abhijeetdev07/Personal-finiance-tracker',
   },
   {
@@ -18,15 +49,15 @@ const projects = [
     description: 'hospital admin, reception, doctor and patient management system',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: hms_demo,
-    demo: 'https://hospital-management-system-69jx.onrender.com/',
+    demo: 'https://github.com/Abhijeetdev07/Hospital-management-system',
     github: 'https://github.com/Abhijeetdev07/Hospital-management-system',
   },
   {
-    title: 'PG Finder (frontend)',
-    description: 'PG Finder is a platform for finding PG\'s in a city',
-    tags: ['react', 'tailwind css', 'react-router'],
+    title: 'PG-Hub',
+    description: 'PG Hub is a platform for finding PG\'s in a city with admin panel',
+    tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: pg_demo,
-    demo: 'https://pg-finder-9ysu.onrender.com',
+    demo: 'https://pg-hub.onrender.com',
     github: 'https://github.com/Abhijeetdev07/pg-finder',
   },
 ]
@@ -47,14 +78,19 @@ const ProjectCard = ({ project, idx }) => {
   return (
     <motion.div
       variants={itemVariants}
-      whileHover={{ y: -6, scale: 1.02 }}
+      whileHover={{ y: -6, scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="group bg-gray-800/60 rounded-2xl overflow-hidden p-6 hover:ring-2 hover:ring-[#00d9ff]/60 hover:shadow-[0_0_45px_8px_rgba(0,200,255,0.55)] transition-transform duration-300 ease-out flex flex-col will-change-transform hover:scale-[1.03] w-full max-w-[340px] mx-auto sm:max-w-none"
+      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-6 border border-white/10 shadow-[0_8px_32px_0_rgba(42,219,92,0.15)] hover:shadow-[0_8px_48px_0_rgba(42,219,92,0.3)] hover:border-green-400/30 transition-all duration-500 ease-out flex flex-col will-change-transform w-full max-w-[340px] mx-auto sm:max-w-none"
     >
-      <div className="aspect-video -mx-6 -mt-6 rounded-t-2xl overflow-hidden mb-5 relative">
+      {/* Glassy background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
+      <div className="absolute -top-12 -right-12 w-32 h-32 bg-green-400/10 rounded-full blur-2xl pointer-events-none group-hover:bg-green-400/15 transition-colors duration-500"></div>
+      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-emerald-400/10 rounded-full blur-2xl pointer-events-none group-hover:bg-emerald-400/15 transition-colors duration-500"></div>
+      
+      <div className="aspect-video -mx-6 -mt-6 rounded-t-2xl overflow-hidden mb-5 relative z-10">
         {!loaded && (
           <div className="absolute inset-0 bg-gray-800/70 flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full border-2 border-cyan-400 border-t-transparent animate-spin" />
+            <div className="w-8 h-8 rounded-full border-2 border-green-400 border-t-transparent animate-spin" />
           </div>
         )}
         {!errored ? (
@@ -70,21 +106,28 @@ const ProjectCard = ({ project, idx }) => {
           <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-400 text-sm">Image unavailable</div>
         )}
       </div>
-      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-      <p className="text-gray-300 mb-4">{project.description}</p>
-      <div className="flex flex-wrap gap-2 mb-5">
-        {project.tags.map((t) => (
-          <span key={t} className="text-xs px-2 py-1 rounded-md border border-gray-600 bg-gray-800/70 text-gray-200">
-            {t}
-          </span>
-        ))}
+      <h3 className="text-xl font-semibold mb-2 relative z-10">{project.title}</h3>
+      <p className="text-gray-300 mb-4 relative z-10">{project.description}</p>
+      <div className="flex flex-wrap gap-2 mb-5 relative z-10">
+        {project.tags.map((t) => {
+          const IconComponent = getTechIcon(t)
+          return (
+            <span 
+              key={t} 
+              className="text-xs px-2.5 py-1.5 rounded-md border border-green-400/30 bg-gradient-to-r from-gray-800/80 to-gray-700/80 text-green-300 font-medium flex items-center gap-1.5 hover:border-green-400/60 hover:shadow-[0_0_8px_rgba(42,219,92,0.3)] transition-all duration-300"
+            >
+              <IconComponent className="w-3.5 h-3.5" />
+              {t}
+            </span>
+          )
+        })}
       </div>
-      <div className="mt-auto flex items-center gap-3">
-        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 justify-center px-4 py-2 rounded-md bg-cyan-400 text-gray-900 font-semibold hover:bg-cyan-300 transition-colors">
+      <div className="mt-auto flex items-center gap-3 relative z-10">
+        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 justify-center px-4 py-2 rounded-md bg-green-400 text-gray-900 font-semibold hover:bg-green-300 transition-colors">
           Live Demo
           <FaExternalLinkAlt className="w-4 h-4" />
         </a>
-        <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 justify-center px-4 py-2 rounded-md border-2 border-cyan-400 text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-colors">
+        <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 justify-center px-4 py-2 rounded-md border-2 border-green-400 text-green-400 font-semibold hover:bg-green-400 hover:text-gray-900 transition-colors">
           <FaGithub className="w-5 h-5" />
           GitHub
         </a>
@@ -95,11 +138,11 @@ const ProjectCard = ({ project, idx }) => {
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-gray-900 text-white">
+    <section id="projects" className="py-24 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
-          <div className="w-24 h-1 bg-cyan-400 mx-auto mt-3"></div>
+          <div className="w-24 h-1 bg-green-400 mx-auto mt-3"></div>
         </div>
 
         <motion.div
@@ -119,7 +162,7 @@ const Projects = () => {
             href="https://github.com/Abhijeetdev07"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-cyan-400 text-gray-900 font-semibold hover:bg-cyan-300 transition-colors shadow-[0_0_30px_rgba(0,200,255,0.35)]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-green-400 text-gray-900 font-semibold hover:bg-green-300 transition-colors shadow-[0_0_30px_rgba(42,219,92,0.35)]"
           >
             View more on GitHub
             <FaGithub className="w-5 h-5" />
