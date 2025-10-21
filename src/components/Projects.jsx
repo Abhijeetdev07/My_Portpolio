@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import hms_demo from '../assets/hms.png'
 import pg_demo from '../assets/pg_img.png'
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
+import herosec from '../assets/herosec-DZoufsF8.png'
+import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
+import { BiCodeAlt } from 'react-icons/bi'
+import { SiMongodb, SiExpress } from 'react-icons/si'
 import { motion } from 'framer-motion'
 
 // Technology icon mapping
 const techIcons = {
-  'MongoDB': SiMongodb,
+    'MongoDB': SiMongodb,
   'Express': SiExpress,
   'React': FaReact,
   'Node': FaNode,
@@ -34,8 +37,8 @@ const projects = [
     title: 'Personal Finance Tracker',
     description: 'Personal finance tracker using MERN stack with CRUD operations,authentication. and data visualization.',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: 'https://smart-finance-uzbk.onrender.com/assets/herosec-DZoufsF8.png',
-    demo: 'https://smart-finance-uzbk.onrender.com/',
+    image: herosec,
+    demo: 'https://smart-finance-o4s9.onrender.com/',
     github: 'https://github.com/Abhijeetdev07/Personal-finiance-tracker',
   },
   {
