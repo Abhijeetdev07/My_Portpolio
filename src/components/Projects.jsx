@@ -54,7 +54,7 @@ const projects = [
     description: 'PG Hub is a platform for finding PG\'s in a city with admin panel',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: pg_demo,
-    demo: 'https://pg-finder-9ysu.onrender.com',
+    demo: 'https://pg-hub.onrender.com/',
     github: 'https://github.com/Abhijeetdev07/pg-finder',
   },
 ]
