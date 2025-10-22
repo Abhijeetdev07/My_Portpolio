@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -14,9 +16,31 @@ const Navbar = () => {
     { name: 'Projects', href: '#projects' },
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY < 10) {
+        // Always show navbar at the top
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY) {
+        // Scrolling down - hide navbar
+        setIsVisible(false)
+        setIsMenuOpen(false) // Close mobile menu when hiding
+      } else {
+        // Scrolling up - show navbar
+        setIsVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   return (
-    <nav className="fixed w-full top-0 z-50 md:top-4">
+    <nav className={`fixed w-full z-50 md:top-4 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Desktop Glassy Capsule Navbar */}
       <div className="hidden md:block">
         <div className="max-w-7xl mx-auto px-6">
@@ -51,7 +75,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden bg-white/5 backdrop-blur-xl shadow-lg border-b border-green-400/30">
+      <div className="md:hidden bg-black shadow-lg border-b border-green-400/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -97,12 +121,12 @@ const Navbar = () => {
 
           {/* Mobile Navigation Menu */}
           <div className="overflow-hidden transition-[max-height] duration-500 ease-in-out" style={{ maxHeight: isMenuOpen ? '360px' : '0px' }}>
-            <div className={`px-2 ${isMenuOpen ? 'pt-2 pb-3 opacity-100 translate-y-0' : 'pt-0 pb-0 opacity-0 -translate-y-2'} space-y-1 sm:px-3 bg-white/5 backdrop-blur-md border-t border-green-400/20 transition-all duration-500 ease-out will-change-transform`}>
+            <div className={`px-2 ${isMenuOpen ? 'pt-2 pb-3 opacity-100 translate-y-0' : 'pt-0 pb-0 opacity-0 -translate-y-2'} space-y-1 sm:px-3 bg-black border-t border-green-400 transition-all duration-500 ease-out will-change-transform`}>
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-300 hover:text-green-400 hover:bg-white/5 block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 relative group"
+                  className="text-white hover:text-green-400 hover:bg-black hover:border hover:border-green-400/50 block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 relative group"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
