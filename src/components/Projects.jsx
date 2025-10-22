@@ -9,11 +9,10 @@ import { motion } from 'framer-motion'
 
 // Technology icon mapping
 const techIcons = {
-    'MongoDB': SiMongodb,
+  'MongoDB': SiMongodb,
   'Express': SiExpress,
   'React': FaReact,
   'Node': FaNode,
- 
 }
 
 // Get icon component for a given tech tag
@@ -35,7 +34,7 @@ const getTechIcon = (tag) => {
 const projects = [
   {
     title: 'Personal Finance Tracker',
-    description: 'Personal finance tracker using MERN stack with CRUD operations,authentication. and data visualization.',
+    description: 'Personal finance tracker using MERN stack with CRUD operations, authentication, and data visualization.',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: herosec,
     demo: 'https://smart-finance-o4s9.onrender.com/',
@@ -43,7 +42,7 @@ const projects = [
   },
   {
     title: 'Hospital Management System',
-    description: 'hospital admin, reception, doctor and patient management system',
+    description: 'Hospital admin, reception, doctor and patient management system',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
     image: hms_demo,
     demo: 'https://github.com/Abhijeetdev07/Hospital-management-system',
@@ -69,7 +68,7 @@ const itemVariants = {
   },
 }
 
-const ProjectCard = ({ project, idx }) => {
+const ProjectCard = ({ project }) => {
   const [loaded, setLoaded] = useState(false)
   const [errored, setErrored] = useState(false)
   return (
@@ -170,8 +169,8 @@ const Projects = () => {
   }, [])
 
   return (
-    <section id="projects" className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
           <div className="w-24 h-1 bg-green-400 mx-auto mt-3"></div>
@@ -192,7 +191,7 @@ const Projects = () => {
                 centerIndex === idx ? 'scale-105 sm:scale-100' : 'scale-95 sm:scale-100'
               }`}
             >
-              <ProjectCard project={p} idx={idx} />
+              <ProjectCard project={p} />
             </div>
           ))}
         </motion.div>
