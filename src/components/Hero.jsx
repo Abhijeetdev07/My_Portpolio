@@ -44,7 +44,7 @@ const Hero = () => {
   }, [roleText, roleIndex, isRoleDeleting, roles])
   return (
     <section id="home" className="relative min-h-screen bg-black text-white flex items-center overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
         <div className="flex justify-center">
           {/* Main Content */}
           <motion.div

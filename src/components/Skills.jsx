@@ -29,7 +29,7 @@ const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) 
 
 const Skills = () => {
   return (
-    <section id="skills" className="relative py-24 bg-black text-white overflow-hidden">
+    <section id="skills" className="relative min-h-screen bg-black text-white overflow-hidden flex items-center justify-center">
       {/* Radial gradient background effect */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/30 via-gray-900/50 to-black"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-500/10 rounded-full blur-[120px]"></div>
