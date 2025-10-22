@@ -40,9 +40,9 @@ const Navbar = () => {
   }, [lastScrollY])
 
   return (
-    <nav className={`fixed w-full z-50 md:top-4 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <nav className={`fixed w-full top-0 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full md:-translate-y-[calc(100%+1rem)]'}`}>
       {/* Desktop Glassy Capsule Navbar */}
-      <div className="hidden md:block">
+      <div className="hidden md:block md:pt-4">
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative bg-white/5 backdrop-blur-xl rounded-full border border-green-400/30 shadow-[0_8px_32px_0_rgba(42,219,92,0.15)] hover:shadow-[0_8px_48px_0_rgba(42,219,92,0.25)] hover:border-green-400/50 transition-all duration-500">
             <div className="flex justify-between items-center h-16 px-6 relative z-10">
