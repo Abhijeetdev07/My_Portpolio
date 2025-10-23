@@ -78,11 +78,7 @@ const ProjectCard = ({ project }) => {
       whileTap={{ scale: 0.99 }}
       className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border-2 border-[rgba(var(--theme-primary-rgb),1)] shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.2)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),1)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
     >
-      {/* Glassy background effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
-      <div className="absolute -top-12 -right-12 w-32 h-32 bg-[rgba(var(--theme-primary-rgb),0.1)] rounded-full blur-2xl pointer-events-none group-hover:bg-[rgba(var(--theme-primary-rgb),0.15)] transition-colors duration-500"></div>
-      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-[rgba(var(--theme-primary-rgb),0.1)] rounded-full blur-2xl pointer-events-none group-hover:bg-[rgba(var(--theme-primary-rgb),0.15)] transition-colors duration-500"></div>
-      
+   
       <div className="aspect-video -mx-5 -mt-5 rounded-t-2xl overflow-hidden mb-4 relative z-10">
         {!loaded && (
           <div className="absolute inset-0 bg-gray-800/70 flex items-center justify-center">
@@ -102,8 +98,8 @@ const ProjectCard = ({ project }) => {
           <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-400 text-sm">Image unavailable</div>
         )}
       </div>
-      <h3 className="text-base min-[500px]:text-lg font-semibold mb-2 relative z-10" style={{ color: 'var(--text-primary)' }}>{project.title}</h3>
-      <p className="text-xs min-[500px]:text-sm mb-3.5 relative z-10 line-clamp-2" style={{ color: 'var(--text-secondary)' }}>{project.description}</p>
+      <h3 className="text-base min-[500px]:text-lg font-semibold mb-2 relative z-10" >{project.title}</h3>
+      <p className="text-xs min-[500px]:text-sm mb-3.5 relative z-10 line-clamp-2" >{project.description}</p>
       <div className="flex flex-wrap gap-1.5 min-[500px]:gap-2 mb-4 relative z-10">
         {project.tags.map((t) => {
           const IconComponent = getTechIcon(t)
@@ -169,7 +165,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+    <section id="projects" className="min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16" >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-10 lg:mb-12">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
