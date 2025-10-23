@@ -52,7 +52,7 @@ const Skills = () => {
                 <h3 className="text-2xl md:text-3xl font-semibold text-white">
                   Technologies I Work With
                 </h3>
-                <p className="text-[var(--theme-primary)] text-xl font-medium mt-4 h-8">
+                <p className="text-[var(--theme-primary)] text-xl font-semibold mt-4 h-8">
                   {hoveredSkill || '\u00A0'}
                 </p>
               </div>
@@ -72,14 +72,18 @@ const Skills = () => {
                       className="flex items-center justify-center"
                     >
                       <div 
-                        className="group relative"
+                        className="group relative aspect-square w-full max-w-[72px] p-3 lg:w-auto lg:h-auto lg:max-w-none lg:aspect-auto lg:p-3 flex items-center justify-center rounded-xl border-2 border-transparent hover:border-[var(--theme-primary)] lg:focus:border-transparent focus:border-[var(--theme-primary)] hover:bg-[rgba(var(--theme-primary-rgb),0.05)] focus:bg-[rgba(var(--theme-primary-rgb),0.05)] lg:focus:bg-transparent transition-all duration-300 cursor-pointer"
                         onMouseEnter={() => setHoveredSkill(skill.name)}
                         onMouseLeave={() => setHoveredSkill('')}
+                        onFocus={() => setHoveredSkill(skill.name)}
+                        onBlur={() => setHoveredSkill('')}
+                        onTouchStart={() => setHoveredSkill(skill.name)}
+                        tabIndex={0}
                       >
                         <img
                           src={skill.src}
                           alt={skill.name}
-                          className={`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(42,219,92,0.25)] transition-transform duration-300 group-hover:scale-110 ${skill.invert ? 'invert brightness-0' : ''}`}
+                          className={`w-10 h-10 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(var(--theme-primary-rgb),0.25)] transition-transform duration-300 group-hover:scale-110 ${skill.invert ? 'invert brightness-0' : ''}`}
                           style={{ filter: skill.invert ? 'invert(1) brightness(2)' : 'none' }}
                         />
                       </div>
