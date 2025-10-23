@@ -171,7 +171,7 @@ const Projects = () => {
   return (
     <section id="projects" className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="text-center mb-6 lg:mb-8">
+        <div className="text-center mb-10 lg:mb-12">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
           <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-2"></div>
         </div>
@@ -187,7 +187,7 @@ const Projects = () => {
           {projects.map((p, idx) => (
             <div 
               key={p.title} 
-              className={`snap-center flex-shrink-0 w-[85vw] max-w-[350px] sm:w-auto sm:flex-shrink sm:snap-align-none transition-transform duration-500 ease-out ${
+              className={`snap-center flex-shrink-0 w-[85vw] max-w-[350px] min-h-[420px] max-[500px]:min-h-[420px] sm:w-auto sm:flex-shrink sm:snap-align-none transition-transform duration-500 ease-out ${
                 centerIndex === idx ? 'scale-105 sm:scale-100' : 'scale-95 sm:scale-100'
               }`}
             >
@@ -196,7 +196,7 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        <div className="mt-12 min-[500px]:mt-14 sm:mt-12 lg:mt-10 flex justify-center">
+        <div className="mt-16 min-[500px]:mt-20 sm:mt-16 lg:mt-14 flex justify-center">
           <a
             href="https://github.com/Abhijeetdev07"
             target="_blank"
