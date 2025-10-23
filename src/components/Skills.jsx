@@ -30,7 +30,7 @@ const Skills = () => {
   return (
     <section id="skills" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
       {/* Radial gradient background effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-green-500/20 rounded-full blur-[120px]"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-[rgba(var(--theme-primary-rgb),0.2)] rounded-full blur-[120px]"></div>
       
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -45,7 +45,7 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-8 md:p-12 rounded-2xl border border-green-400/20 transition-all duration-500"
+          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-8 md:p-12 rounded-2xl border border-[rgba(var(--theme-primary-rgb),0.2)] transition-all duration-500"
         >
             <div className="space-y-8">
               <div className="text-center">
@@ -72,7 +72,7 @@ const Skills = () => {
                       className="flex items-center justify-center"
                     >
                       <div 
-                        className="group relative aspect-square w-full max-w-[72px] p-3 lg:w-auto lg:h-auto lg:max-w-none lg:aspect-auto lg:p-3 flex items-center justify-center rounded-xl border-2 border-transparent hover:border-[var(--theme-primary)] lg:focus:border-transparent focus:border-[var(--theme-primary)] hover:bg-[rgba(var(--theme-primary-rgb),0.05)] focus:bg-[rgba(var(--theme-primary-rgb),0.05)] lg:focus:bg-transparent transition-all duration-300 cursor-pointer"
+                        className="group relative aspect-square w-full max-w-[60px] min-[450px]:max-w-[72px] lg:max-w-[80px] p-2 min-[450px]:p-3 flex items-center justify-center rounded-xl border-2 border-transparent hover:border-[var(--theme-primary)] lg:focus:border-transparent focus:border-[var(--theme-primary)] hover:bg-[rgba(var(--theme-primary-rgb),0.05)] focus:bg-[rgba(var(--theme-primary-rgb),0.05)] lg:focus:bg-transparent transition-all duration-300 cursor-pointer"
                         onMouseEnter={() => setHoveredSkill(skill.name)}
                         onMouseLeave={() => setHoveredSkill('')}
                         onFocus={() => setHoveredSkill(skill.name)}
@@ -83,7 +83,7 @@ const Skills = () => {
                         <img
                           src={skill.src}
                           alt={skill.name}
-                          className={`w-10 h-10 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(var(--theme-primary-rgb),0.25)] transition-transform duration-300 group-hover:scale-110 ${skill.invert ? 'invert brightness-0' : ''}`}
+                          className={`w-8 h-8 min-[450px]:w-10 min-[450px]:h-10 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(var(--theme-primary-rgb),0.25)] transition-transform duration-300 group-hover:scale-110 ${skill.invert ? 'invert brightness-0' : ''}`}
                           style={{ filter: skill.invert ? 'invert(1) brightness(2)' : 'none' }}
                         />
                       </div>
