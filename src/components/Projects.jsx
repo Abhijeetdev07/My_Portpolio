@@ -76,7 +76,7 @@ const ProjectCard = ({ project }) => {
       variants={itemVariants}
       whileHover={{ y: -6, scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border border-white/10 shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.15)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),0.3)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
+      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border-2 border-[rgba(var(--theme-primary-rgb),1)] shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.2)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),1)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
     >
       {/* Glassy background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>

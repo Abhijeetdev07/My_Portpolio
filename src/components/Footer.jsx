@@ -19,9 +19,8 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-6">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-16">
           <div>
-          <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-2 group select-none">
-              <span className="inline-block w-2.5 h-6 rounded-sm bg-[var(--theme-primary)] shadow-[0_0_15px_rgba(var(--theme-primary-rgb),0.6)]"></span>
-              <span className="px-4 py-1.5 rounded-full bg-gray-900/40 backdrop-blur-md logo-border-shine">
+          <a href="#home" className="flex items-center gap-2 group select-none">
+              <span className="px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md logo-border-shine">
                 <span className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-[var(--theme-light)] via-[var(--theme-primary)] to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(var(--theme-primary-rgb),0.35)]">
                   Abhijeet
                 </span>
