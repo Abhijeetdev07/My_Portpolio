@@ -28,12 +28,12 @@ const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState('')
 
   return (
-    <section id="skills" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
+    <section id="skills" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center py-8 sm:py-12 lg:py-16">
       {/* Radial gradient background effect */}
       <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[550px] bg-[rgba(var(--theme-primary-rgb),0.2)] rounded-full blur-[120px]"></div>
       
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 min-[500px]:mb-16">
+        <div className="text-center mb-4 sm:mb-6 lg:mb-8">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="text-[var(--theme-primary)]">Skills</span>
           </h2>
@@ -45,20 +45,20 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-6 min-[500px]:p-8 md:p-12 rounded-2xl border border-[rgba(var(--theme-primary-rgb),0.2)] transition-all duration-500"
+          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-4 sm:p-5 md:p-6 lg:p-8 rounded-2xl border border-[rgba(var(--theme-primary-rgb),0.2)] transition-all duration-500"
         >
-            <div className="space-y-6 min-[500px]:space-y-8">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               <div className="text-center">
                 <h3 className="text-xl min-[500px]:text-2xl md:text-3xl font-semibold text-white">
                   Technologies I Work With
                 </h3>
-                <p className="text-[var(--theme-primary)] text-lg min-[500px]:text-xl font-semibold mt-4 h-8">
+                <p className="text-[var(--theme-primary)] text-lg min-[500px]:text-xl font-semibold mt-3 h-8">
                   {hoveredSkill || '\u00A0'}
                 </p>
               </div>
               
               {/* Skills Grid */}
-              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-6 md:gap-8">
+              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-4 sm:gap-6 md:gap-8">
                 {skills.map((skill, index) => {
                   const delay = (index % 10) * 0.1
                   
