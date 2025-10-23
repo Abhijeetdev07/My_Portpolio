@@ -76,7 +76,7 @@ const ProjectCard = ({ project }) => {
       variants={itemVariants}
       whileHover={{ y: -6, scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border border-white/10 shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.15)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),0.3)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
+      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 min-[500px]:p-5 border border-white/10 shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.15)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),0.3)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full min-[500px]:h-full sm:h-[calc(100vh-200px)]"
     >
       {/* Glassy background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
@@ -102,29 +102,29 @@ const ProjectCard = ({ project }) => {
           <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-400 text-sm">Image unavailable</div>
         )}
       </div>
-      <h3 className="text-lg font-semibold mb-2 relative z-10">{project.title}</h3>
-      <p className="text-gray-300 text-sm mb-3.5 relative z-10 line-clamp-2">{project.description}</p>
-      <div className="flex flex-wrap gap-2 mb-4 relative z-10">
+      <h3 className="text-base min-[500px]:text-lg font-semibold mb-2 relative z-10">{project.title}</h3>
+      <p className="text-gray-300 text-xs min-[500px]:text-sm mb-3.5 relative z-10 line-clamp-2">{project.description}</p>
+      <div className="flex flex-wrap gap-1.5 min-[500px]:gap-2 mb-4 relative z-10">
         {project.tags.map((t) => {
           const IconComponent = getTechIcon(t)
           return (
             <span 
               key={t} 
-              className="text-xs px-2 py-1.5 rounded-md border border-[rgba(var(--theme-primary-rgb),0.3)] bg-gradient-to-r from-gray-800/80 to-gray-700/80 text-[var(--theme-light)] font-medium flex items-center gap-1.5 hover:border-[rgba(var(--theme-primary-rgb),0.6)] hover:shadow-[0_0_8px_rgba(var(--theme-primary-rgb),0.3)] transition-all duration-300"
+              className="text-[10px] min-[500px]:text-xs px-1.5 min-[500px]:px-2 py-1 min-[500px]:py-1.5 rounded-md border border-[rgba(var(--theme-primary-rgb),0.3)] bg-gradient-to-r from-gray-800/80 to-gray-700/80 text-[var(--theme-light)] font-medium flex items-center gap-1 min-[500px]:gap-1.5 hover:border-[rgba(var(--theme-primary-rgb),0.6)] hover:shadow-[0_0_8px_rgba(var(--theme-primary-rgb),0.3)] transition-all duration-300"
             >
-              <IconComponent className="w-3 h-3" />
+              <IconComponent className="w-2.5 h-2.5 min-[500px]:w-3 min-[500px]:h-3" />
               {t}
             </span>
           )
         })}
       </div>
       <div className="mt-auto flex items-center gap-2 relative z-10">
-        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 justify-center px-3 py-1.5 text-sm rounded-md bg-[var(--theme-primary)] text-gray-900 font-semibold hover:bg-[var(--theme-light)] transition-colors">
+        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 min-[500px]:gap-1.5 justify-center px-2.5 min-[500px]:px-3 py-1.5 text-xs min-[500px]:text-sm rounded-md bg-[var(--theme-primary)] text-gray-900 font-semibold hover:bg-[var(--theme-light)] transition-colors">
           Live Demo
-          <FaExternalLinkAlt className="w-3.5 h-3.5" />
+          <FaExternalLinkAlt className="w-3 h-3 min-[500px]:w-3.5 min-[500px]:h-3.5" />
         </a>
-        <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 justify-center px-3 py-1.5 text-sm rounded-md border-2 border-[var(--theme-primary)] text-[var(--theme-primary)] font-semibold hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors">
-          <FaGithub className="w-4 h-4" />
+        <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 min-[500px]:gap-1.5 justify-center px-2.5 min-[500px]:px-3 py-1.5 text-xs min-[500px]:text-sm rounded-md border-2 border-[var(--theme-primary)] text-[var(--theme-primary)] font-semibold hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors">
+          <FaGithub className="w-3.5 h-3.5 min-[500px]:w-4 min-[500px]:h-4" />
           GitHub
         </a>
       </div>
@@ -171,9 +171,9 @@ const Projects = () => {
   return (
     <section id="projects" className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
-          <div className="w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-3"></div>
+        <div className="text-center mb-8 min-[500px]:mb-12">
+          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
+          <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-3"></div>
         </div>
 
         <motion.div
@@ -196,15 +196,15 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        <div className="mt-12 flex justify-center">
+        <div className="mt-15 min-[500px]:mt-20 flex justify-center">
           <a
             href="https://github.com/Abhijeetdev07"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--theme-primary)] text-gray-900 font-semibold hover:bg-[var(--theme-light)] transition-colors shadow-[0_0_30px_rgba(var(--theme-primary-rgb),0.35)]"
+            className="inline-flex items-center gap-2 px-4 py-2 min-[500px]:px-6 min-[500px]:py-3 text-sm min-[500px]:text-base rounded-lg bg-[var(--theme-primary)] text-gray-900 font-semibold hover:bg-[var(--theme-light)] transition-colors shadow-[0_0_30px_rgba(var(--theme-primary-rgb),0.35)]"
           >
             View more on GitHub
-            <FaGithub className="w-5 h-5" />
+            <FaGithub className="w-4 h-4 min-[500px]:w-5 min-[500px]:h-5" />
           </a>
         </div>
       </div>

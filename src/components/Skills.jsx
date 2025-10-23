@@ -30,14 +30,14 @@ const Skills = () => {
   return (
     <section id="skills" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
       {/* Radial gradient background effect */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-[rgba(var(--theme-primary-rgb),0.2)] rounded-full blur-[120px]"></div>
+      <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[550px] bg-[rgba(var(--theme-primary-rgb),0.2)] rounded-full blur-[120px]"></div>
       
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 min-[500px]:mb-16">
+          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="text-[var(--theme-primary)]">Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-[var(--theme-primary)] mx-auto"></div>
+          <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto"></div>
         </div>
 
         <motion.div
@@ -45,14 +45,14 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-8 md:p-12 rounded-2xl border border-[rgba(var(--theme-primary-rgb),0.2)] transition-all duration-500"
+          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-6 min-[500px]:p-8 md:p-12 rounded-2xl border border-[rgba(var(--theme-primary-rgb),0.2)] transition-all duration-500"
         >
-            <div className="space-y-8">
+            <div className="space-y-6 min-[500px]:space-y-8">
               <div className="text-center">
-                <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                <h3 className="text-xl min-[500px]:text-2xl md:text-3xl font-semibold text-white">
                   Technologies I Work With
                 </h3>
-                <p className="text-[var(--theme-primary)] text-xl font-semibold mt-4 h-8">
+                <p className="text-[var(--theme-primary)] text-lg min-[500px]:text-xl font-semibold mt-4 h-8">
                   {hoveredSkill || '\u00A0'}
                 </p>
               </div>
