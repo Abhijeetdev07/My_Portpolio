@@ -14,7 +14,7 @@ const quickLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black text-gray-300 border-t border-[rgba(var(--theme-primary-rgb),0.2)]">
+    <footer className="relative border-t" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-secondary)', borderColor: 'var(--border-color)' }}>
       <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-[rgba(var(--theme-primary-rgb),0.4)] to-transparent"></div>
       <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-6">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-16">
@@ -27,7 +27,7 @@ const Footer = () => {
                 </span>
               </span>
             </a>
-            <p className="mt-2 text-sm text-white max-w-md">
+            <p className="mt-2 text-sm max-w-md" style={{ color: 'var(--text-primary)' }}>
             Passionate MERN Developer. <br /> Building scalable web applications <br/> with  modern technologies.
             </p>
             <div className="mt-6 flex items-center gap-4">
@@ -59,7 +59,7 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h4 className="text-[var(--theme-primary)] font-semibold mb-3 ">Quick Links</h4>
+            <h4 className="text-[var(--theme-primary)] font-semibold mb-3">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((l) => (
                 <li key={l.name}>
@@ -73,18 +73,18 @@ const Footer = () => {
           <div>
             <h4 className="text-2xl font-semibold text-[var(--theme-primary)] mb-4">Get In Touch</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-3 text-gray-300">
+              <li className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
                 <HiOutlineMail className="w-5 h-5 text-[var(--theme-primary)]" />
                 <a href="mailto:ugaleabhijeet03@gmail.com" className="hover:text-[var(--theme-primary)] transition-colors">ugaleabhijeet03@gmail.com</a>
               </li>
-              <li className="flex items-center gap-3 text-gray-300">
+              <li className="flex items-center gap-3" style={{ color: 'var(--text-secondary)' }}>
                 <FaLocationDot className="text-[var(--theme-primary)]" />
                 <span>Chikhli, Maharashtra, India</span>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-8 pt-4 border-t border-gray-800 text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-2 text-center">
+        <div className="mt-8 pt-4 border-t text-xs flex flex-col sm:flex-row items-center justify-between gap-2 text-center" style={{ borderColor: 'var(--border-color)', color: 'var(--text-tertiary)' }}>
           <span>© {new Date().getFullYear()} Abhijeet Ugale. All rights reserved.</span>
           <span>
             Crafted with <FaHeart className="inline text-red-500" /> and React &amp; Tailwind

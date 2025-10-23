@@ -28,13 +28,13 @@ const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState('')
 
   return (
-    <section id="skills" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center py-8 sm:py-12 lg:py-16">
+    <section id="skills" className="relative min-h-screen overflow-hidden flex items-center justify-center py-8 sm:py-12 lg:py-16" style={{ backgroundColor: 'var(--bg-primary)' }}>
       {/* Radial gradient background effect */}
       <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[550px] bg-[rgba(var(--theme-primary-rgb),0.2)] rounded-full blur-[120px]"></div>
       
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
             My <span className="text-[var(--theme-primary)]">Skills</span>
           </h2>
           <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto"></div>
@@ -45,11 +45,11 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-4 sm:p-5 md:p-6 lg:p-8 rounded-2xl border border-[rgba(var(--theme-primary-rgb),0.2)] transition-all duration-500"
+          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto p-4 sm:p-5 md:p-6 lg:p-8 rounded-2xl border transition-all duration-500" style={{ backgroundColor: 'var(--bg-card-dark)', borderColor: 'var(--border-color)' }}
         >
             <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               <div className="text-center">
-                <h3 className="text-xl min-[500px]:text-2xl md:text-3xl font-semibold text-white">
+                <h3 className="text-xl min-[500px]:text-2xl md:text-3xl font-semibold" style={{ color: 'var(--text-primary)' }}>
                   Technologies I Work With
                 </h3>
                 <p className="text-[var(--theme-primary)] text-lg min-[500px]:text-xl font-semibold mt-3 h-8">
@@ -83,8 +83,7 @@ const Skills = () => {
                         <img
                           src={skill.src}
                           alt={skill.name}
-                          className={`w-8 h-8 min-[450px]:w-10 min-[450px]:h-10 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(var(--theme-primary-rgb),0.25)] transition-transform duration-300 group-hover:scale-110 ${skill.invert ? 'invert brightness-0' : ''}`}
-                          style={{ filter: skill.invert ? 'invert(1) brightness(2)' : 'none' }}
+                          className={`w-8 h-8 min-[450px]:w-10 min-[450px]:h-10 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(var(--theme-primary-rgb),0.25)] transition-transform duration-300 group-hover:scale-110 ${skill.invert ? 'skill-icon-invert' : ''}`}
                         />
                       </div>
                     </motion.div>

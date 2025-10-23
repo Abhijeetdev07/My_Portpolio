@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { MdPalette } from 'react-icons/md'
+import { MdDarkMode, MdLightMode } from 'react-icons/md'
 
 const themes = [
   { name: 'Green', primary: '#2adb5c', primaryRgb: '42, 219, 92', light: '#86efac', lightRgb: '134, 239, 172' },
@@ -10,7 +11,7 @@ const themes = [
   { name: 'Cyan', primary: '#06b6d4', primaryRgb: '6, 182, 212', light: '#67e8f9', lightRgb: '103, 232, 249' },
 ]
 
-const Navbar = () => {
+const Navbar = ({ isDarkMode, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -104,17 +105,26 @@ const Navbar = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-gray-300 hover:text-[var(--theme-primary)] hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative group"
+                    className="hover:text-[var(--theme-primary)] hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative group" style={{ color: 'var(--text-secondary)' }}
                   >
                     {item.name}
                   </a>
                 ))}
                 
+                {/* Dark/Light Mode Toggle */}
+                <button
+                  onClick={toggleTheme}
+                  className="hover:text-[var(--theme-primary)] hover:bg-white/5 p-2 rounded-full text-sm font-medium transition-all duration-300" style={{ color: 'var(--text-secondary)' }}
+                  aria-label="Toggle dark/light mode"
+                >
+                  {isDarkMode ? <MdLightMode className="w-5 h-5" /> : <MdDarkMode className="w-5 h-5" />}
+                </button>
+                
                 {/* Theme Switcher Button */}
                 <div className="relative ml-2 theme-picker-container">
                   <button
                     onClick={() => setShowThemePicker(!showThemePicker)}
-                    className="text-gray-300 hover:text-[var(--theme-primary)] hover:bg-white/5 p-2 rounded-full text-sm font-medium transition-all duration-300"
+                    className="hover:text-[var(--theme-primary)] hover:bg-white/5 p-2 rounded-full text-sm font-medium transition-all duration-300" style={{ color: 'var(--text-secondary)' }}
                     aria-label="Change theme color"
                   >
                     <MdPalette className="w-5 h-5" />
@@ -147,7 +157,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navbar */}
-      <div className="md:hidden bg-black shadow-lg border-b border-[rgba(var(--theme-primary-rgb),0.3)]">
+      <div className="md:hidden shadow-lg border-b border-[rgba(var(--theme-primary-rgb),0.3)]" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -163,11 +173,21 @@ const Navbar = () => {
 
             {/* Mobile menu button and theme switcher */}
             <div className="flex items-center gap-2">
+              {/* Dark/Light Mode Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-md hover:text-[var(--theme-primary)] hover:bg-white/5 transition-all duration-300"
+                style={{ color: 'var(--text-secondary)' }}
+                aria-label="Toggle dark/light mode"
+              >
+                {isDarkMode ? <MdLightMode className="w-5 h-5" /> : <MdDarkMode className="w-5 h-5" />}
+              </button>
               {/* Theme Switcher Button */}
               <div className="relative theme-picker-container">
                 <button
                   onClick={() => setShowThemePicker(!showThemePicker)}
-                  className="p-2 rounded-md text-gray-300 hover:text-[var(--theme-primary)] hover:bg-white/5 transition-all duration-300"
+                  className="p-2 rounded-md hover:text-[var(--theme-primary)] hover:bg-white/5 transition-all duration-300"
+                  style={{ color: 'var(--text-secondary)' }}
                   aria-label="Change theme color"
                 >
                   <MdPalette className="w-5 h-5" />
@@ -196,7 +216,8 @@ const Navbar = () => {
               
               <button
                 onClick={toggleMenu}
-                className="inline-flex flex-col items-center justify-center p-2 rounded-md text-gray-300 hover:text-[var(--theme-primary)] hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--theme-primary)] w-10 h-10 gap-1.5"
+                className="inline-flex flex-col items-center justify-center p-2 rounded-md hover:text-[var(--theme-primary)] hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--theme-primary)] w-10 h-10 gap-1.5"
+                style={{ color: 'var(--text-secondary)' }}
               >
                 <span className={`block h-0.5 w-6 bg-current transform transition-all duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
                 <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
@@ -207,12 +228,12 @@ const Navbar = () => {
 
           {/* Mobile Navigation Menu */}
           <div className="overflow-hidden transition-[max-height] duration-500 ease-in-out" style={{ maxHeight: isMenuOpen ? '360px' : '0px' }}>
-            <div className={`px-2 ${isMenuOpen ? 'pt-2 pb-3 opacity-100 translate-y-0' : 'pt-0 pb-0 opacity-0 -translate-y-2'} space-y-1 sm:px-3 bg-black border-t border-[var(--theme-primary)] transition-all duration-500 ease-out will-change-transform`}>
+            <div className={`px-2 ${isMenuOpen ? 'pt-2 pb-3 opacity-100 translate-y-0' : 'pt-0 pb-0 opacity-0 -translate-y-2'} space-y-1 sm:px-3 border-t border-[var(--theme-primary)] transition-all duration-500 ease-out will-change-transform`} style={{ backgroundColor: 'var(--bg-primary)' }}>
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-white hover:text-[var(--theme-primary)] hover:bg-black hover:border hover:border-[rgba(var(--theme-primary-rgb),0.5)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 relative group"
+                  className="hover:text-[var(--theme-primary)] hover:border hover:border-[rgba(var(--theme-primary-rgb),0.5)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 relative group" style={{ color: 'var(--text-primary)', backgroundColor: 'transparent' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

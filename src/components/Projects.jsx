@@ -102,8 +102,8 @@ const ProjectCard = ({ project }) => {
           <div className="w-full h-full bg-gray-800 flex items-center justify-center text-gray-400 text-sm">Image unavailable</div>
         )}
       </div>
-      <h3 className="text-base min-[500px]:text-lg font-semibold mb-2 relative z-10">{project.title}</h3>
-      <p className="text-gray-300 text-xs min-[500px]:text-sm mb-3.5 relative z-10 line-clamp-2">{project.description}</p>
+      <h3 className="text-base min-[500px]:text-lg font-semibold mb-2 relative z-10" style={{ color: 'var(--text-primary)' }}>{project.title}</h3>
+      <p className="text-xs min-[500px]:text-sm mb-3.5 relative z-10 line-clamp-2" style={{ color: 'var(--text-secondary)' }}>{project.description}</p>
       <div className="flex flex-wrap gap-1.5 min-[500px]:gap-2 mb-4 relative z-10">
         {project.tags.map((t) => {
           const IconComponent = getTechIcon(t)
@@ -169,7 +169,7 @@ const Projects = () => {
   }, [])
 
   return (
-    <section id="projects" className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden py-12 lg:py-16">
+    <section id="projects" className="min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-10 lg:mb-12">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>

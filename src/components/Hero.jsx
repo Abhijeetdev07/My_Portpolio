@@ -43,7 +43,7 @@ const Hero = () => {
     return () => clearTimeout(roleTimer)
   }, [roleText, roleIndex, isRoleDeleting, roles])
   return (
-    <section id="home" className="relative min-h-screen bg-black text-white flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
         <div className="flex justify-center">
           {/* Main Content */}
@@ -60,7 +60,7 @@ const Hero = () => {
                 I'm <span className="text-[var(--theme-primary)]">Abhijeet Ugale</span>
                 <span className="text-yellow-400 text-4xl min-[500px]:text-5xl md:text-7xl ml-2">👋</span>
               </h1>
-              <h2 className="text-xl min-[500px]:text-2xl md:text-4xl text-gray-300 font-medium mt-6 leading-relaxed">
+              <h2 className="text-xl min-[500px]:text-2xl md:text-4xl font-medium mt-6 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 I am <span className="text-[var(--theme-primary)]">{roleText}</span>
                 <span className="animate-pulse text-[var(--theme-primary)]">|</span>
               </h2>

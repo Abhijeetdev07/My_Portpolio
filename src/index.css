@@ -10,9 +10,47 @@
   --theme-light-rgb: 134, 239, 172;
   --theme-dark: #22c55e;
   --theme-dark-rgb: 34, 197, 94;
+
+  /* Dark mode colors (default) */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-dark: rgba(0, 0, 0, 0.9);
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+:root.light-mode {
+  /* Light mode colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card: rgba(0, 0, 0, 0.03);
+  --bg-card-dark: rgba(0, 0, 0, 0.03);
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-tertiary: #6b7280;
+  --border-color: rgba(0, 0, 0, 0.1);
 }
 
 html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Skill icon invert filter for dark mode */
+:root .skill-icon-invert {
+  filter: invert(1) brightness(2);
+}
+
+/* Skill icon in light mode - make it black */
+:root.light-mode .skill-icon-invert {
+  filter: invert(0) brightness(0);
+}
 
 @keyframes floatY {
   0% { transform: translateY(0px); }
