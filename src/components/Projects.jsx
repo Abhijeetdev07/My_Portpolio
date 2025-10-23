@@ -76,7 +76,7 @@ const ProjectCard = ({ project }) => {
       variants={itemVariants}
       whileHover={{ y: -6, scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 min-[500px]:p-5 border border-white/10 shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.15)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),0.3)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full min-[500px]:h-full sm:h-[calc(100vh-200px)]"
+      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border border-white/10 shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.15)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),0.3)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
     >
       {/* Glassy background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
@@ -169,16 +169,16 @@ const Projects = () => {
   }, [])
 
   return (
-    <section id="projects" className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden">
+    <section id="projects" className="min-h-screen bg-black text-white flex items-center justify-center overflow-hidden py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="text-center mb-8 min-[500px]:mb-12">
+        <div className="text-center mb-6 lg:mb-8">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
-          <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-3"></div>
+          <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-2"></div>
         </div>
 
         <motion.div
           ref={scrollContainerRef}
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-8 -my-8 sm:py-0 sm:my-0 pb-4 px-[7.5vw] sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible scroll-smooth"
+          className="flex gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-8 -my-8 sm:py-0 sm:my-0 pb-4 px-[7.5vw] sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible scroll-smooth"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
@@ -196,7 +196,7 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        <div className="mt-15 min-[500px]:mt-20 flex justify-center">
+        <div className="mt-12 min-[500px]:mt-14 sm:mt-12 lg:mt-10 flex justify-center">
           <a
             href="https://github.com/Abhijeetdev07"
             target="_blank"
