@@ -35,9 +35,9 @@ const Skills = () => {
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            My <span className="text-[#2adb5c]">Skills</span>
+            My <span className="text-[var(--theme-primary)]">Skills</span>
           </h2>
-          <div className="w-24 h-1 bg-[#2adb5c] mx-auto"></div>
+          <div className="w-24 h-1 bg-[var(--theme-primary)] mx-auto"></div>
         </div>
 
         <motion.div
@@ -52,7 +52,7 @@ const Skills = () => {
                 <h3 className="text-2xl md:text-3xl font-semibold text-white">
                   Technologies I Work With
                 </h3>
-                <p className="text-[#2adb5c] text-xl font-medium mt-4 h-8">
+                <p className="text-[var(--theme-primary)] text-xl font-medium mt-4 h-8">
                   {hoveredSkill || '\u00A0'}
                 </p>
               </div>

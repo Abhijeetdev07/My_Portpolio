@@ -14,15 +14,15 @@ const quickLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black text-gray-300 border-t border-green-400/20">
-      <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-green-400/40 to-transparent"></div>
+    <footer className="relative bg-black text-gray-300 border-t border-[rgba(var(--theme-primary-rgb),0.2)]">
+      <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-[rgba(var(--theme-primary-rgb),0.4)] to-transparent"></div>
       <div className="max-w-6xl mx-auto px-6 md:px-8 lg:px-12 py-6">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8 md:gap-16">
           <div>
           <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="flex items-center gap-2 group select-none">
-              <span className="inline-block w-2.5 h-6 rounded-sm bg-green-400 shadow-[0_0_15px_rgba(42,219,92,0.6)]"></span>
+              <span className="inline-block w-2.5 h-6 rounded-sm bg-[var(--theme-primary)] shadow-[0_0_15px_rgba(var(--theme-primary-rgb),0.6)]"></span>
               <span className="px-4 py-1.5 rounded-full bg-gray-900/40 backdrop-blur-md logo-border-shine">
-                <span className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-green-300 via-green-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(42,219,92,0.35)]">
+                <span className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-[var(--theme-light)] via-[var(--theme-primary)] to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(var(--theme-primary-rgb),0.35)]">
                   Abhijeet
                 </span>
               </span>
@@ -35,7 +35,7 @@ const Footer = () => {
                 href="https://github.com/Abhijeetdev07"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl border border-green-400/40 text-green-400 flex items-center justify-center hover:bg-green-400 hover:text-gray-900 transition-colors"
+                className="w-10 h-10 rounded-xl border border-[rgba(var(--theme-primary-rgb),0.4)] text-[var(--theme-primary)] flex items-center justify-center hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub className="w-5 h-5" />
@@ -44,14 +44,14 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/abhijeetugale07?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl border border-green-400/40 text-green-400 flex items-center justify-center hover:bg-green-400 hover:text-gray-900 transition-colors"
+                className="w-10 h-10 rounded-xl border border-[rgba(var(--theme-primary-rgb),0.4)] text-[var(--theme-primary)] flex items-center justify-center hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="w-5 h-5" />
               </a>
               <a
                 href="mailto:ugaleabhijeet03@gmail.com"
-                className="w-10 h-10 rounded-xl border text-green-400 flex items-center justify-center hover:bg-green-400 hover:text-gray-900 transition-colors"
+                className="w-10 h-10 rounded-xl border text-[var(--theme-primary)] flex items-center justify-center hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors"
                 aria-label="Email"
               >
                 <HiOutlineMail className="w-5 h-5" />
@@ -59,11 +59,11 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h4 className="text-green-400 font-semibold mb-3 ">Quick Links</h4>
+            <h4 className="text-[var(--theme-primary)] font-semibold mb-3 ">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((l) => (
                 <li key={l.name}>
-                  <a href={l.href} className="hover:text-green-400 transition-colors">
+                  <a href={l.href} className="hover:text-[var(--theme-primary)] transition-colors">
                     {l.name}
                   </a>
                 </li>
@@ -71,14 +71,14 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="text-2xl font-semibold text-green-400 mb-4">Get In Touch</h4>
+            <h4 className="text-2xl font-semibold text-[var(--theme-primary)] mb-4">Get In Touch</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-gray-300">
-                <HiOutlineMail className="w-5 h-5 text-green-400" />
-                <a href="mailto:ugaleabhijeet03@gmail.com" className="hover:text-green-400 transition-colors">ugaleabhijeet03@gmail.com</a>
+                <HiOutlineMail className="w-5 h-5 text-[var(--theme-primary)]" />
+                <a href="mailto:ugaleabhijeet03@gmail.com" className="hover:text-[var(--theme-primary)] transition-colors">ugaleabhijeet03@gmail.com</a>
               </li>
               <li className="flex items-center gap-3 text-gray-300">
-                <FaLocationDot className="text-green-400" />
+                <FaLocationDot className="text-[var(--theme-primary)]" />
                 <span>Chikhli, Maharashtra, India</span>
               </li>
             </ul>

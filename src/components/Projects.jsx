@@ -76,17 +76,17 @@ const ProjectCard = ({ project }) => {
       variants={itemVariants}
       whileHover={{ y: -6, scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border border-white/10 shadow-[0_8px_32px_0_rgba(42,219,92,0.15)] hover:shadow-[0_8px_48px_0_rgba(42,219,92,0.3)] hover:border-green-400/30 transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
+      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border border-white/10 shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.15)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),0.3)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
     >
       {/* Glassy background effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none"></div>
-      <div className="absolute -top-12 -right-12 w-32 h-32 bg-green-400/10 rounded-full blur-2xl pointer-events-none group-hover:bg-green-400/15 transition-colors duration-500"></div>
-      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-emerald-400/10 rounded-full blur-2xl pointer-events-none group-hover:bg-emerald-400/15 transition-colors duration-500"></div>
+      <div className="absolute -top-12 -right-12 w-32 h-32 bg-[rgba(var(--theme-primary-rgb),0.1)] rounded-full blur-2xl pointer-events-none group-hover:bg-[rgba(var(--theme-primary-rgb),0.15)] transition-colors duration-500"></div>
+      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-[rgba(var(--theme-primary-rgb),0.1)] rounded-full blur-2xl pointer-events-none group-hover:bg-[rgba(var(--theme-primary-rgb),0.15)] transition-colors duration-500"></div>
       
       <div className="aspect-video -mx-5 -mt-5 rounded-t-2xl overflow-hidden mb-4 relative z-10">
         {!loaded && (
           <div className="absolute inset-0 bg-gray-800/70 flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full border-2 border-green-400 border-t-transparent animate-spin" />
+            <div className="w-8 h-8 rounded-full border-2 border-[var(--theme-primary)] border-t-transparent animate-spin" />
           </div>
         )}
         {!errored ? (
@@ -110,7 +110,7 @@ const ProjectCard = ({ project }) => {
           return (
             <span 
               key={t} 
-              className="text-xs px-2 py-1.5 rounded-md border border-green-400/30 bg-gradient-to-r from-gray-800/80 to-gray-700/80 text-green-300 font-medium flex items-center gap-1.5 hover:border-green-400/60 hover:shadow-[0_0_8px_rgba(42,219,92,0.3)] transition-all duration-300"
+              className="text-xs px-2 py-1.5 rounded-md border border-[rgba(var(--theme-primary-rgb),0.3)] bg-gradient-to-r from-gray-800/80 to-gray-700/80 text-[var(--theme-light)] font-medium flex items-center gap-1.5 hover:border-[rgba(var(--theme-primary-rgb),0.6)] hover:shadow-[0_0_8px_rgba(var(--theme-primary-rgb),0.3)] transition-all duration-300"
             >
               <IconComponent className="w-3 h-3" />
               {t}
@@ -119,11 +119,11 @@ const ProjectCard = ({ project }) => {
         })}
       </div>
       <div className="mt-auto flex items-center gap-2 relative z-10">
-        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 justify-center px-3 py-1.5 text-sm rounded-md bg-green-400 text-gray-900 font-semibold hover:bg-green-300 transition-colors">
+        <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 justify-center px-3 py-1.5 text-sm rounded-md bg-[var(--theme-primary)] text-gray-900 font-semibold hover:bg-[var(--theme-light)] transition-colors">
           Live Demo
           <FaExternalLinkAlt className="w-3.5 h-3.5" />
         </a>
-        <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 justify-center px-3 py-1.5 text-sm rounded-md border-2 border-green-400 text-green-400 font-semibold hover:bg-green-400 hover:text-gray-900 transition-colors">
+        <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 justify-center px-3 py-1.5 text-sm rounded-md border-2 border-[var(--theme-primary)] text-[var(--theme-primary)] font-semibold hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors">
           <FaGithub className="w-4 h-4" />
           GitHub
         </a>
@@ -173,7 +173,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
-          <div className="w-24 h-1 bg-green-400 mx-auto mt-3"></div>
+          <div className="w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-3"></div>
         </div>
 
         <motion.div
@@ -201,7 +201,7 @@ const Projects = () => {
             href="https://github.com/Abhijeetdev07"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-green-400 text-gray-900 font-semibold hover:bg-green-300 transition-colors shadow-[0_0_30px_rgba(42,219,92,0.35)]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--theme-primary)] text-gray-900 font-semibold hover:bg-[var(--theme-light)] transition-colors shadow-[0_0_30px_rgba(var(--theme-primary-rgb),0.35)]"
           >
             View more on GitHub
             <FaGithub className="w-5 h-5" />

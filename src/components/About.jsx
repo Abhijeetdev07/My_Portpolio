@@ -10,9 +10,9 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About <span className="text-[#2adb5c]">Me</span>
+            About <span className="text-[var(--theme-primary)]">Me</span>
           </h2>
-          <div className="w-24 h-1 bg-[#2adb5c] mx-auto"></div>
+          <div className="w-24 h-1 bg-[var(--theme-primary)] mx-auto"></div>
         </div>
 
         <div className="flex justify-center">

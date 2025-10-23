@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+:root {
+  /* Primary theme color */
+  --theme-primary: #2adb5c;
+  --theme-primary-rgb: 42, 219, 92;
+  
+  /* Theme color variations */
+  --theme-light: #86efac;
+  --theme-light-rgb: 134, 239, 172;
+  --theme-dark: #22c55e;
+  --theme-dark-rgb: 34, 197, 94;
+}
+
 html { scroll-behavior: smooth; }
 
 @keyframes floatY {
@@ -74,11 +86,11 @@ html { scroll-behavior: smooth; }
   padding: 2px;
   background: linear-gradient(
     90deg,
-    rgba(42,219,92,0.2) 0%,
-    rgba(42,219,92,0.9) 25%,
-    rgba(134,239,172,1) 50%,
-    rgba(42,219,92,0.9) 75%,
-    rgba(42,219,92,0.2) 100%
+    rgba(var(--theme-primary-rgb), 0.2) 0%,
+    rgba(var(--theme-primary-rgb), 0.9) 25%,
+    rgba(var(--theme-light-rgb), 1) 50%,
+    rgba(var(--theme-primary-rgb), 0.9) 75%,
+    rgba(var(--theme-primary-rgb), 0.2) 100%
   );
   background-size: 200% 100%;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

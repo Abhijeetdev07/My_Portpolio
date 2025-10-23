@@ -57,12 +57,12 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">Namaste,</h1>
               <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                I'm <span className="text-[#2adb5c]">Abhijeet Ugale</span>
+                I'm <span className="text-[var(--theme-primary)]">Abhijeet Ugale</span>
                 <span className="text-yellow-400 text-5xl md:text-7xl ml-2">👋</span>
               </h1>
               <h2 className="text-2xl md:text-4xl text-gray-300 font-medium mt-6 leading-relaxed">
-                I am <span className="text-[#2adb5c]">{roleText}</span>
-                <span className="animate-pulse text-[#2adb5c]">|</span>
+                I am <span className="text-[var(--theme-primary)]">{roleText}</span>
+                <span className="animate-pulse text-[var(--theme-primary)]">|</span>
               </h2>
             </div>
 
@@ -72,11 +72,11 @@ const Hero = () => {
               href="https://github.com/Abhijeetdev07?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#2adb5c] text-gray-900 rounded-lg font-semibold hover:bg-[#2adb5c] transition-colors flex items-center justify-center animate-bounce"
+              className="px-6 py-3 bg-[var(--theme-primary)] text-gray-900 rounded-lg font-semibold hover:bg-[var(--theme-primary)] transition-colors flex items-center justify-center animate-bounce"
             >
               View Projects
             </a>
-              <a href={resumePdf} download className="border-2 border-[#2adb5c] text-[#2adb5c] px-6 py-3 rounded-lg font-semibold hover:bg-[#2adb5c] hover:text-gray-900 transition-colors flex items-center gap-2">
+              <a href={resumePdf} download className="border-2 border-[var(--theme-primary)] text-[var(--theme-primary)] px-6 py-3 rounded-lg font-semibold hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors flex items-center gap-2">
                 <span>Download Resume</span>
                 <LuDownload />
               </a>
