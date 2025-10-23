@@ -34,7 +34,7 @@ const Skills = () => {
       
       <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-4 sm:mb-6 lg:mb-8">
-          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold mb-4">
             My <span className="text-[var(--theme-primary)]">Skills</span>
           </h2>
           <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto"></div>
@@ -45,11 +45,11 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto p-4 sm:p-5 md:p-6 lg:p-8 rounded-2xl border transition-all duration-500" style={{ backgroundColor: 'var(--bg-card-dark)', borderColor: 'var(--border-color)' }}
+          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto p-4 sm:p-5 md:p-6 lg:p-8 rounded-2xl border transition-all duration-500" style={{ backgroundColor: 'var(--bg-card-dark)' }}
         >
             <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               <div className="text-center">
-                <h3 className="text-xl min-[500px]:text-2xl md:text-3xl font-semibold" style={{ color: 'var(--text-primary)' }}>
+                <h3 className="text-xl min-[500px]:text-2xl md:text-3xl font-semibold">
                   Technologies I Work With
                 </h3>
                 <p className="text-[var(--theme-primary)] text-lg min-[500px]:text-xl font-semibold mt-3 h-8">
