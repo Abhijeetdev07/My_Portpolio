@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const skills = [
@@ -19,59 +19,75 @@ const skills = [
   { name: 'VS Code', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
   { name: 'Linux', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
   { name: 'C', src: 'https://img.icons8.com/?size=100&id=40670&format=png&color=000000' },
-  { name: 'curser ai', src: 'https://img.icons8.com/?size=100&id=DiGZkjCzyZXn&format=png&color=000000'},
+  { name: 'Cursor AI', src: 'https://img.icons8.com/?size=100&id=DiGZkjCzyZXn&format=png&color=000000'},
   { name: 'ChatGPT', src:'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg' },
   { name: 'AWS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' }
-
 ]
 
-const randomBetween = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min
-
 const Skills = () => {
-  return (
-    <section id="skills" className="relative min-h-screen bg-black text-white overflow-hidden flex items-center justify-center">
-      {/* Radial gradient background effect */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/30 via-gray-900/50 to-black"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-500/10 rounded-full blur-[120px]"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <h2 className="text-center text-4xl md:text-5xl mb-2">My Skills</h2>
-        <div className="w-24 h-1 bg-[#2adb5c] mx-auto mb-12"></div>
+  const [hoveredSkill, setHoveredSkill] = useState('')
 
-        {/* Grid layout of floating icons */}
+  return (
+    <section id="skills" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
+      {/* Radial gradient background effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-green-500/20 rounded-full blur-[120px]"></div>
+      
+      <div className="w-full px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            My <span className="text-[#2adb5c]">Skills</span>
+          </h2>
+          <div className="w-24 h-1 bg-[#2adb5c] mx-auto"></div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="relative mx-auto max-w-5xl rounded-3xl overflow-hidden border border-green-400/20 bg-black/90 p-12 md:p-14 lg:p-20"
+          className="w-full max-[1000px]:w-full min-[1001px]:w-[70%] mx-auto bg-black/90 p-8 md:p-12 rounded-2xl border border-green-400/20 transition-all duration-500"
         >
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-6 md:gap-8 lg:gap-10">
-            {skills.map((skill, index) => {
-              // Alternate floating animations
-              const floatClass = index % 2 === 0 ? 'animate-float-y' : 'animate-float-x'
-              const delay = (index % 10) * 0.35
+            <div className="space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                  Technologies I Work With
+                </h3>
+                <p className="text-[#2adb5c] text-xl font-medium mt-4 h-8">
+                  {hoveredSkill || '\u00A0'}
+                </p>
+              </div>
               
-              return (
-                <div
-                  key={skill.name}
-                  className="flex items-center justify-center"
-                >
-                  <div className={`group relative ${floatClass}`} style={{ animationDelay: `${delay}s` }}>
-                    <img
-                      src={skill.src}
-                      alt={skill.name}
-                      className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(42,219,92,0.25)] transition-transform duration-500 group-hover:scale-110 ${skill.invert ? 'invert brightness-0' : ''}`}
-                      style={{ filter: skill.invert ? 'invert(1) brightness(2)' : 'none' }}
-                    />
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute left-1/2 -translate-x-1/2 top-[calc(100%+8px)] text-xs bg-black/90 px-2 py-1 rounded-md border border-green-400/30 whitespace-nowrap z-10">
-                      {skill.name}
-                    </span>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+              {/* Skills Grid */}
+              <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-6 md:gap-8">
+                {skills.map((skill, index) => {
+                  const delay = (index % 10) * 0.1
+                  
+                  return (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay, ease: 'easeOut' }}
+                      className="flex items-center justify-center"
+                    >
+                      <div 
+                        className="group relative"
+                        onMouseEnter={() => setHoveredSkill(skill.name)}
+                        onMouseLeave={() => setHoveredSkill('')}
+                      >
+                        <img
+                          src={skill.src}
+                          alt={skill.name}
+                          className={`w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 drop-shadow-[0_0_18px_rgba(42,219,92,0.25)] transition-transform duration-300 group-hover:scale-110 ${skill.invert ? 'invert brightness-0' : ''}`}
+                          style={{ filter: skill.invert ? 'invert(1) brightness(2)' : 'none' }}
+                        />
+                      </div>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </div>
         </motion.div>
       </div>
     </section>
@@ -79,5 +95,3 @@ const Skills = () => {
 }
 
 export default Skills
-
-
