@@ -32,6 +32,12 @@
   --text-secondary: #374151;
   --text-tertiary: #6b7280;
   --border-color: rgba(0, 0, 0, 0.1);
+  --input-border-light: #c3c4c5;
+}
+
+/* Light mode input borders */
+:root.light-mode .contact-input {
+  border-color: var(--input-border-light) !important;
 }
 
 html { scroll-behavior: smooth; }
