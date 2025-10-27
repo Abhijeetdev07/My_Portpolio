@@ -32,6 +32,18 @@ const Contact = () => {
     });
   };
 
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    // Allow only numbers, +, -, spaces, and parentheses
+    const phoneRegex = /^[0-9+\-\s()]*$/;
+    if (phoneRegex.test(value)) {
+      setFormData({
+        ...formData,
+        phone: value
+      });
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -141,9 +153,8 @@ const Contact = () => {
               id="phone"
               name="phone"
               value={formData.phone}
-              onChange={handleChange}
-              inputMode="numeric"
-              pattern="[0-9+\-\s()]*"
+              onChange={handlePhoneChange}
+              inputMode="tel"
               className="contact-input w-full px-3 py-2.5 rounded-lg border border-transparent focus:outline-none focus:border-[var(--theme-primary)] focus:ring-2 focus:ring-[rgba(var(--theme-primary-rgb),0.2)] transition-all duration-300 text-sm"
               style={{ backgroundColor: 'var(--bg-card)', color: 'var(--text-primary)' }}
               placeholder="+91"
