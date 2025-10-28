@@ -166,7 +166,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16" >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-10 lg:mb-12">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
           <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-2"></div>
@@ -174,7 +174,7 @@ const Projects = () => {
 
         <motion.div
           ref={scrollContainerRef}
-          className="flex gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-8 -my-8 sm:py-0 sm:my-0 pb-4 px-[7.5vw] sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible scroll-smooth"
+          className="flex gap-3 sm:gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-8 -my-8 sm:py-0 sm:my-0 pb-4 px-4 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible scroll-smooth"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
@@ -183,8 +183,8 @@ const Projects = () => {
           {projects.map((p, idx) => (
             <div 
               key={p.title} 
-              className={`snap-center flex-shrink-0 w-[85vw] max-w-[350px] min-h-[420px] max-[500px]:min-h-[420px] sm:w-auto sm:flex-shrink sm:snap-align-none transition-transform duration-500 ease-out ${
-                centerIndex === idx ? 'scale-105 sm:scale-100' : 'scale-95 sm:scale-100'
+              className={`snap-center flex-shrink-0 w-[75vw] max-w-[300px] min-h-[420px] max-[500px]:min-h-[420px] sm:w-auto sm:flex-shrink sm:snap-align-none transition-transform duration-500 ease-out ${
+                centerIndex === idx ? 'scale-105 sm:scale-100' : 'scale-90 sm:scale-100'
               }`}
             >
               <ProjectCard project={p} />
