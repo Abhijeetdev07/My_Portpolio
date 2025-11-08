@@ -1,6 +1,6 @@
 # My Portfolio
 
-visit [my portfolio](https://abhijeet-portfolio-qjfz.onrender.com)
+visit [my portfolio](https://abhijeetugale.netlify.app/)
 
 Welcome to my portfolio! 🚀
 
