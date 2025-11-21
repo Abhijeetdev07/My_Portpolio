@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import hms_demo from '../assets/hms.png'
-import pg_demo from '../assets/pg_img.png'
+import pg_demo from '../assets/pg_img.png' 
 import herosec from '../assets/herosec-DZoufsF8.png'
 import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
