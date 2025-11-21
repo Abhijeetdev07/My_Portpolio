@@ -6,7 +6,7 @@ import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
 import { SiMongodb, SiExpress } from 'react-icons/si'
 import { motion } from 'framer-motion'
-
+ 
 // Technology icon mapping
 const techIcons = {
   'MongoDB': SiMongodb,
