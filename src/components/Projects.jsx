@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import hms_demo from '../assets/hms.png'
-import pg_demo from '../assets/pg_img.png'
+import pg_demo from '../assets/pg_img.png' 
 import herosec from '../assets/herosec-DZoufsF8.png'
 import ez_demo from '../assets/ezesume.png'
 import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
 import { SiMongodb, SiExpress } from 'react-icons/si'
 import { motion } from 'framer-motion'
-
+  
 // Technology icon mapping
 const techIcons = {
   'MongoDB': SiMongodb,
