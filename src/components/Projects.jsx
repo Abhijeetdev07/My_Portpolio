@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import hms_demo from '../assets/hms.png'
 import pg_demo from '../assets/pg_img.png'
 import herosec from '../assets/herosec-DZoufsF8.png'
+import ez_demo from '../assets/ezesume.png'
 import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
 import { SiMongodb, SiExpress } from 'react-icons/si'
@@ -32,6 +33,14 @@ const getTechIcon = (tag) => {
 }
 
 const projects = [
+  {
+    title: 'EZ Resume',
+    description: 'A comprehensive resume builder application allowing users to create and customize professional resumes.',
+    tags: ['MongoDB', 'Express', 'React', 'Node'],
+    image: ez_demo,
+    demo: 'https://ezyresume.onrender.com/',
+    github: 'https://ezyresume.onrender.com/',
+  },
   {
     title: 'Personal Finance Tracker',
     description: 'Personal finance tracker using MERN stack with CRUD operations, authentication, and data visualization.',
