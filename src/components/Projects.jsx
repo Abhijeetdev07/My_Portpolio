@@ -181,7 +181,7 @@ const Projects = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-
+ 
         <div className="mt-16 min-[500px]:mt-20 sm:mt-16 lg:mt-14 flex justify-center">
           <a
             href="https://github.com/Abhijeetdev07"
