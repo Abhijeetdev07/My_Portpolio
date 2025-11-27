@@ -7,7 +7,19 @@ import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
 import { SiMongodb, SiExpress } from 'react-icons/si'
 import { motion } from 'framer-motion'
-  
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+// Import Swiper modules
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
 // Technology icon mapping
 const techIcons = {
   'MongoDB': SiMongodb,
@@ -138,68 +150,37 @@ const ProjectCard = ({ project }) => {
 }
 
 const Projects = () => {
-  const scrollContainerRef = React.useRef(null)
-  const [centerIndex, setCenterIndex] = React.useState(0)
-
-  React.useEffect(() => {
-    const container = scrollContainerRef.current
-    if (!container) return
-
-    const handleScroll = () => {
-      const containerRect = container.getBoundingClientRect()
-      const containerCenter = containerRect.left + containerRect.width / 2
-      
-      const cards = container.children
-      let closestIndex = 0
-      let minDistance = Infinity
-
-      Array.from(cards).forEach((card, index) => {
-        const cardRect = card.getBoundingClientRect()
-        const cardCenter = cardRect.left + cardRect.width / 2
-        const distance = Math.abs(containerCenter - cardCenter)
-        
-        if (distance < minDistance) {
-          minDistance = distance
-          closestIndex = index
-        }
-      })
-
-      setCenterIndex(closestIndex)
-    }
-
-    container.addEventListener('scroll', handleScroll)
-    handleScroll() // Initial check
-    
-    return () => container.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16" >
+    <section id="projects" className="min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-10 lg:mb-12">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
           <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-2"></div>
         </div>
 
-        <motion.div
-          ref={scrollContainerRef}
-          className="flex gap-3 sm:gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide py-8 -my-8 sm:py-0 sm:my-0 pb-4 px-4 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:overflow-visible scroll-smooth"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{ staggerChildren: 0.08, delayChildren: 0.05 }}
+        <Swiper
+          effect={'coverflow'}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={'auto'}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 50,
+            depth: 50,
+            modifier: 2,
+            slideShadows: true,
+          }}
+          pagination={false}
+          navigation={false}
+          modules={[EffectCoverflow, Pagination, Navigation]}
+          className="mySwiper py-12"
         >
-          {projects.map((p, idx) => (
-            <div 
-              key={p.title} 
-              className={`snap-center flex-shrink-0 w-[75vw] max-w-[300px] min-h-[420px] max-[500px]:min-h-[420px] sm:w-auto sm:flex-shrink sm:snap-align-none transition-transform duration-500 ease-out ${
-                centerIndex === idx ? 'scale-105 sm:scale-100' : 'scale-90 sm:scale-100'
-              }`}
-            >
-              <ProjectCard project={p} />
-            </div>
+          {projects.map((project) => (
+            <SwiperSlide key={project.title} className="!w-[300px] sm:!w-[320px] lg:!w-[320px]">
+              <ProjectCard project={project} />
+            </SwiperSlide>
           ))}
-        </motion.div>
+        </Swiper>
 
         <div className="mt-16 min-[500px]:mt-20 sm:mt-16 lg:mt-14 flex justify-center">
           <a
