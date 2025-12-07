@@ -85,7 +85,7 @@ const projects = [
     description: 'A weather application providing real-time weather updates and forecasts.',
     tags: ['Next.js', 'React', 'TypeScript'],
     image: weather_demo,
-    demo: 'https://github.com/Abhijeetdev07/cloudcover_whether-app.git',
+    demo: 'https://cloudcover-nine.vercel.app/',
     github: 'https://github.com/Abhijeetdev07/cloudcover_whether-app.git',
   },
 ]
@@ -108,7 +108,7 @@ const ProjectCard = ({ project }) => {
       variants={itemVariants}
       whileHover={{ y: -6, scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border-2 border-[rgba(var(--theme-primary-rgb),1)] shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.2)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),1)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full min-h-[450px]"
+      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border-2 border-[rgba(var(--theme-primary-rgb),1)] shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.2)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),1)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full min-h-[420px]"
     >
    
       <div className="aspect-video -mx-5 -mt-5 rounded-t-2xl overflow-hidden mb-4 relative z-10">
