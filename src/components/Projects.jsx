@@ -49,6 +49,14 @@ const getTechIcon = (tag) => {
 
 const projects = [
   {
+    title: 'Weather App',
+    description: 'A weather application providing real-time weather updates and forecasts.',
+    tags: ['Next.js', 'React', 'TypeScript'],
+    image: weather_demo,
+    demo: 'https://cloudcover-nine.vercel.app/',
+    github: 'https://github.com/Abhijeetdev07/cloudcover_whether-app.git',
+  },
+  {
     title: 'EZ Resume',
     description: 'A comprehensive resume builder application allowing users to create and customize professional resumes.',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
@@ -65,14 +73,6 @@ const projects = [
     github: 'https://github.com/Abhijeetdev07/Personal-finiance-tracker',
   },
   {
-    title: 'Hospital Management System',
-    description: 'Hospital admin, reception, doctor and patient management system',
-    tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: hms_demo,
-    demo: 'https://github.com/Abhijeetdev07/Hospital-management-system',
-    github: 'https://github.com/Abhijeetdev07/Hospital-management-system',
-  },
-  {
     title: 'PG-Hub',
     description: 'PG Hub is a platform for finding PG\'s in a city with admin panel',
     tags: ['MongoDB', 'Express', 'React', 'Node'],
@@ -81,12 +81,12 @@ const projects = [
     github: 'https://github.com/Abhijeetdev07/pg-finder',
   },
   {
-    title: 'Weather App',
-    description: 'A weather application providing real-time weather updates and forecasts.',
-    tags: ['Next.js', 'React', 'TypeScript'],
-    image: weather_demo,
-    demo: 'https://cloudcover-nine.vercel.app/',
-    github: 'https://github.com/Abhijeetdev07/cloudcover_whether-app.git',
+    title: 'Hospital Management System',
+    description: 'Hospital admin, reception, doctor and patient management system',
+    tags: ['MongoDB', 'Express', 'React', 'Node'],
+    image: hms_demo,
+    demo: 'https://github.com/Abhijeetdev07/Hospital-management-system',
+    github: 'https://github.com/Abhijeetdev07/Hospital-management-system',
   },
 ]
 
