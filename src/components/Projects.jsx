@@ -3,9 +3,10 @@ import hms_demo from '../assets/hms.png'
 import pg_demo from '../assets/pg_img.png' 
 import herosec from '../assets/herosec-DZoufsF8.png'
 import ez_demo from '../assets/ezesume.png'
+import weather_demo from '../assets/weather.png'
 import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
-import { SiMongodb, SiExpress } from 'react-icons/si'
+import { SiMongodb, SiExpress, SiNextdotjs, SiTypescript } from 'react-icons/si'
 import { motion } from 'framer-motion'
 
 // Import Swiper React components
@@ -24,6 +25,8 @@ import 'swiper/css/navigation'
 const techIcons = {
   'MongoDB': SiMongodb,
   'Express': SiExpress,
+  'Next.js': SiNextdotjs,
+  'TypeScript': SiTypescript,
   'React': FaReact,
   'Node': FaNode,
 }
@@ -77,6 +80,14 @@ const projects = [
     demo: 'https://pg-hub.onrender.com/',
     github: 'https://github.com/Abhijeetdev07/pg-finder',
   },
+  {
+    title: 'Weather App',
+    description: 'A weather application providing real-time weather updates and forecasts.',
+    tags: ['Next.js', 'React', 'TypeScript'],
+    image: weather_demo,
+    demo: 'https://github.com/Abhijeetdev07/cloudcover_whether-app.git',
+    github: 'https://github.com/Abhijeetdev07/cloudcover_whether-app.git',
+  },
 ]
 
 const itemVariants = {
@@ -97,7 +108,7 @@ const ProjectCard = ({ project }) => {
       variants={itemVariants}
       whileHover={{ y: -6, scale: 1.01 }}
       whileTap={{ scale: 0.99 }}
-      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border-2 border-[rgba(var(--theme-primary-rgb),1)] shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.2)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),1)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full"
+      className="group relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden p-5 border-2 border-[rgba(var(--theme-primary-rgb),1)] shadow-[0_8px_32px_0_rgba(var(--theme-primary-rgb),0.2)] hover:shadow-[0_8px_48px_0_rgba(var(--theme-primary-rgb),0.3)] hover:border-[rgba(var(--theme-primary-rgb),1)] transition-all duration-500 ease-out flex flex-col will-change-transform w-full h-full min-h-[450px]"
     >
    
       <div className="aspect-video -mx-5 -mt-5 rounded-t-2xl overflow-hidden mb-4 relative z-10">
