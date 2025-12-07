@@ -174,6 +174,7 @@ const Projects = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
+          initialSlide={2}
           coverflowEffect={{
             rotate: 0,
             stretch: 50,
