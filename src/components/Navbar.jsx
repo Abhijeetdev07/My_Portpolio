@@ -15,6 +15,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Buy Projects', href: 'https://codebazarr.vercel.app/', external: true },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -53,7 +54,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                 <a href="#home" className="flex items-center gap-2 group select-none">
                   <span className="px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md logo-border-shine">
                     <span className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-[var(--theme-light)] via-[var(--theme-primary)] to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(var(--theme-primary-rgb),0.35)]">
-                      Abhijee
+                      Abhijeet
                     </span>
                   </span>
                 </a>
@@ -65,6 +66,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                   <a
                     key={item.name}
                     href={item.href}
+                    {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
                     className="hover:text-[var(--theme-primary)] hover:bg-white/5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative group" style={{ color: 'var(--text-secondary)' }}
                   >
                     {item.name}
@@ -131,6 +133,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                 <a
                   key={item.name}
                   href={item.href}
+                  {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
                   className="hover:text-[var(--theme-primary)] hover:border hover:border-[rgba(var(--theme-primary-rgb),0.5)] block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 relative group" style={{ color: 'var(--text-primary)', backgroundColor: 'transparent' }}
                   onClick={() => setIsMenuOpen(false)}
                 >
