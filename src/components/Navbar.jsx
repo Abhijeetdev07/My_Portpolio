@@ -53,7 +53,7 @@ const Navbar = ({ isDarkMode, toggleTheme }) => {
                 <a href="#home" className="flex items-center gap-2 group select-none">
                   <span className="px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md logo-border-shine">
                     <span className="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-[var(--theme-light)] via-[var(--theme-primary)] to-emerald-400 bg-clip-text text-transparent drop-shadow-[0_2px_6px_rgba(var(--theme-primary-rgb),0.35)]">
-                      Abhijeet
+                      Abhijee
                     </span>
                   </span>
                 </a>
