@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Snowfall from 'react-snowfall';
 import { LuDownload } from "react-icons/lu";
 import resumePdf from '../assets/My-Resume.pdf'
 import { motion } from 'framer-motion'
@@ -44,6 +45,7 @@ const Hero = () => {
   }, [roleText, roleIndex, isRoleDeleting, roles])
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+      <Snowfall color="#82C3D9"/>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
         <div className="flex justify-center">
           {/* Main Content */}

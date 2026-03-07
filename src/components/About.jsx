@@ -1,10 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Snowfall from 'react-snowfall';
 
 const About = () => {
   return (
     <section id="about" className="relative min-h-screen overflow-hidden flex items-center justify-center">
       {/* Radial gradient background effect */}
+      <Snowfall color="#82C3D9"/>
       <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-[rgba(var(--theme-primary-rgb),0.2)] rounded-full blur-[120px]"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

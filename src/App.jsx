@@ -6,6 +6,7 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { FaWhatsapp } from 'react-icons/fa'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true)
@@ -47,6 +48,17 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+
+      <a
+        href={`https://wa.me/91${7719935835}?text=${encodeURIComponent('Hi Abhijeet! I visited your portfolio and would like to connect.')}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-transform"
+        aria-label="Chat on WhatsApp"
+        title="Chat on WhatsApp"
+      >
+        <FaWhatsapp className="w-7 h-7" />
+      </a>
     </>
   )
 }

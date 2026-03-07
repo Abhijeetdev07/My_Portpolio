@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FiMail, FiUser, FiMessageSquare, FiSend, FiPhone } from 'react-icons/fi';
+import Snowfall from 'react-snowfall';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -81,6 +82,7 @@ const Contact = () => {
   return (
     <section id="contact" className="relative h-screen overflow-hidden flex items-center justify-center py-8" style={{ backgroundColor: 'var(--bg-primary)' }}>
       {/* Radial gradient background effect */}
+      <Snowfall color="#82C3D9"/>
       <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[600px] bg-[rgba(var(--theme-primary-rgb),0.2)] rounded-full blur-[120px]"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">

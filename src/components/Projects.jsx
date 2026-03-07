@@ -8,6 +8,7 @@ import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
 import { SiMongodb, SiExpress, SiNextdotjs, SiTypescript } from 'react-icons/si'
 import { motion } from 'framer-motion'
+import Snowfall from 'react-snowfall';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -159,11 +160,12 @@ const ProjectCard = ({ project }) => {
     </motion.div>
   )
 }
-
+// relative min-h-screen flex items-center overflow-hidden
 const Projects = () => {
   return (
-    <section id="projects" className="min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-full">
+    <section id="projects" className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+      <Snowfall color="#82C3D9" style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="text-center mb-10 lg:mb-12">
           <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
           <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-2"></div>
