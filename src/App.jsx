@@ -10,6 +10,7 @@ import { FaWhatsapp } from 'react-icons/fa'
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     // Check localStorage for saved theme preference
@@ -20,6 +21,26 @@ function App() {
     } else {
       setIsDarkMode(true)
       document.documentElement.classList.remove('light-mode')
+    }
+  }, [])
+
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop
+      const scrollHeight = document.documentElement.scrollHeight
+      const clientHeight = document.documentElement.clientHeight
+      const maxScroll = Math.max(scrollHeight - clientHeight, 1)
+      const progress = Math.min((scrollTop / maxScroll) * 100, 100)
+      setScrollProgress(progress)
+    }
+
+    updateScrollProgress()
+    window.addEventListener('scroll', updateScrollProgress, { passive: true })
+    window.addEventListener('resize', updateScrollProgress)
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollProgress)
+      window.removeEventListener('resize', updateScrollProgress)
     }
   }, [])
 
@@ -41,6 +62,13 @@ function App() {
 
   return (
     <>
+      <div className="fixed top-0 left-0 right-0 z-[60] h-1 bg-transparent">
+        <div
+          className="h-full bg-[var(--theme-primary)]"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Hero />
       <About />
