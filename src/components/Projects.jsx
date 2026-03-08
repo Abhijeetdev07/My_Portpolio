@@ -163,7 +163,7 @@ const ProjectCard = ({ project }) => {
 // relative min-h-screen flex items-center overflow-hidden
 const Projects = () => {
   return (
-    <section id="projects" className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16" style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
+    <section id="projects" className="relative min-h-screen flex items-center justify-center overflow-hidden py-12 lg:py-16">
       <Snowfall color="#82C3D9" style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="text-center mb-10 lg:mb-12">
