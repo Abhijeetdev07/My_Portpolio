@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Snowfall from 'react-snowfall';
-import { LuDownload } from "react-icons/lu";
+import { LuEye } from "react-icons/lu";
 import resumePdf from '../assets/My-Resume.pdf'
 import { motion } from 'framer-motion'
 
@@ -82,11 +82,12 @@ const Hero = () => {
               </a>
               <a
                 href={resumePdf}
-                download="Abhijeet_Ugale_Data_Analyst_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-[var(--theme-primary)] text-[var(--theme-primary)] px-4 py-2 min-[500px]:px-6 min-[500px]:py-3 text-sm min-[500px]:text-base rounded-lg font-semibold hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors flex items-center gap-2"
               >
-                <span>Download Resume</span>
-                <LuDownload />
+                <span>View Resume</span>
+                <LuEye className="w-4 h-4" />
               </a>
             </div>
 
