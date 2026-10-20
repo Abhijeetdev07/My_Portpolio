@@ -27,20 +27,15 @@ const About = () => {
           >
             <div className="space-y-4 min-[500px]:space-y-6">
               <h3 className="text-xl min-[500px]:text-2xl md:text-3xl font-semibold text-center" style={{ color: 'var(--text-primary)' }}>
-                I'm Abhijeet Ugale, a passionate developer
+                I'm Abhijeet Ugale, a results-driven Data Analyst
               </h3>
               
               <p className="text-base min-[500px]:text-lg leading-relaxed text-center" style={{ color: 'var(--text-secondary)' }}>
-              Hey there! I'm final year Information Technology (IT) student at Anuradha College of 
-                Engineering and Technology, Chikhli, with a strong passion for web development 
-                and software engineering. I love creating innovative solutions and bringing 
-                ideas to life through code.
+                I am an Engineering graduate in Information Technology (B.E. IT) from Sant Gadge Baba Amravati University (CGPA 7.07) with hands-on project experience in <span className="text-[var(--theme-primary)] font-medium">SQL, Python, Excel, Power BI, and Tableau</span>. I specialize in data cleaning, data modeling, exploratory data analysis (EDA), and statistical analysis.
               </p>
               
               <p className="text-base min-[500px]:text-lg leading-relaxed text-center" style={{ color: 'var(--text-secondary)' }}>
-                My journey in programming started with curiosity and has evolved into a 
-                deep commitment to mastering both frontend and backend technologies. 
-                I enjoy working with modern frameworks and tools to build scalable.
+                Known for strong analytical thinking and business problem-solving, I build interactive dashboards and KPI reports that turn raw, messy datasets into actionable business insights—supporting smarter, data-driven decisions. I have also completed Data Analytics Job Simulations with <span className="text-[var(--theme-primary)] font-medium">Tata Group</span> and <span className="text-[var(--theme-primary)] font-medium">Deloitte Australia</span>.
               </p>
             </div>
           </motion.div>

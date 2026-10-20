@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import hms_demo from '../assets/hms.png'
-import pg_demo from '../assets/pg_img.png' 
-import herosec from '../assets/herosec-DZoufsF8.png'
-import ez_demo from '../assets/ezesume.png'
-import weather_demo from '../assets/weather.png'
-import { FaExternalLinkAlt, FaGithub, FaReact, FaNode } from 'react-icons/fa'
+import loan_approval from '../assets/loan_approval.png'
+import hr_attrition from '../assets/hr_attrition.png'
+import sales_dashboard from '../assets/sales_dashboard.png'
+import medical_sql from '../assets/medical_sql.jpg'
+import { FaExternalLinkAlt, FaGithub, FaPython, FaDatabase, FaFileExcel, FaChartBar, FaChartLine, FaChartPie } from 'react-icons/fa'
 import { BiCodeAlt } from 'react-icons/bi'
-import { SiMongodb, SiExpress, SiNextdotjs, SiTypescript } from 'react-icons/si'
+import { SiPandas, SiNumpy, SiMysql, SiTableau } from 'react-icons/si'
+import { BsBarChartFill } from 'react-icons/bs'
 import { motion } from 'framer-motion'
-import Snowfall from 'react-snowfall';
+import Snowfall from 'react-snowfall'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -22,14 +22,22 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-// Technology icon mapping
+// Technology icon mapping for Data Analytics
 const techIcons = {
-  'MongoDB': SiMongodb,
-  'Express': SiExpress,
-  'Next.js': SiNextdotjs,
-  'TypeScript': SiTypescript,
-  'React': FaReact,
-  'Node': FaNode,
+  'Python': FaPython,
+  'SQL': FaDatabase,
+  'MySQL': SiMysql,
+  'Power BI': BsBarChartFill,
+  'Tableau': SiTableau,
+  'Pandas': SiPandas,
+  'NumPy': SiNumpy,
+  'Excel': FaFileExcel,
+  'DAX': FaChartLine,
+  'Seaborn': FaChartPie,
+  'EDA': FaChartBar,
+  'Data Modeling': FaDatabase,
+  'Analytics': BsBarChartFill,
+  'Database': FaDatabase,
 }
 
 // Get icon component for a given tech tag
@@ -50,44 +58,36 @@ const getTechIcon = (tag) => {
 
 const projects = [
   {
-    title: 'Weather App',
-    description: 'A weather application providing real-time weather updates and forecasts.',
-    tags: ['Next.js', 'React', 'TypeScript'],
-    image: weather_demo,
-    demo: 'https://cloudcover-nine.vercel.app/',
-    github: 'https://github.com/Abhijeetdev07/cloudcover_whether-app.git',
+    title: 'Bank Loan Approval & Risk Analysis',
+    description: 'End-to-end loan approval analytics on 614 applicant records, evaluating credit risk, demographics, and income with interactive Power BI dashboards.',
+    tags: ['Python', 'SQL', 'Power BI', 'Pandas'],
+    image: loan_approval,
+    demo: 'https://github.com/Abhijeetdev07/finance_project_loan_approval-analysis',
+    github: 'https://github.com/Abhijeetdev07/finance_project_loan_approval-analysis',
   },
   {
-    title: 'EZ Resume',
-    description: 'A comprehensive resume builder application allowing users to create and customize professional resumes.',
-    tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: ez_demo,
-    demo: 'https://ezyresume.onrender.com/',
-    github: 'https://ezyresume.onrender.com/',
+    title: 'HR Attrition & Analytics Dashboard',
+    description: 'Comprehensive HR workforce analysis across 1,470 employee records uncovering key turnover drivers (30.5% overtime attrition) with a 4-page DAX dashboard.',
+    tags: ['Power BI', 'Python', 'SQL', 'DAX'],
+    image: hr_attrition,
+    demo: 'https://github.com/Abhijeetdev07/hr_attrition_employee',
+    github: 'https://github.com/Abhijeetdev07/hr_attrition_employee',
   },
   {
-    title: 'Personal Finance Tracker',
-    description: 'Personal finance tracker using MERN stack with CRUD operations, authentication, and data visualization.',
-    tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: herosec,
-    demo: 'https://smart-finance-o4s9.onrender.com/',
-    github: 'https://github.com/Abhijeetdev07/Personal-finiance-tracker',
+    title: 'Sales Performance & Profit Analytics',
+    description: 'Interactive multi-year Power BI sales dashboard visualizing $55.39M in revenue, $35.59M profit margins, regional trends, and category performance.',
+    tags: ['Power BI', 'Excel', 'DAX', 'Analytics'],
+    image: sales_dashboard,
+    demo: 'https://github.com/Abhijeetdev07/sales_data_powerbi',
+    github: 'https://github.com/Abhijeetdev07/sales_data_powerbi',
   },
   {
-    title: 'PG-Hub',
-    description: 'PG Hub is a platform for finding PG\'s in a city with admin panel',
-    tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: pg_demo,
-    demo: 'https://pg-hub.onrender.com/',
-    github: 'https://github.com/Abhijeetdev07/pg-finder',
-  },
-  {
-    title: 'Hospital Management System',
-    description: 'Hospital admin, reception, doctor and patient management system',
-    tags: ['MongoDB', 'Express', 'React', 'Node'],
-    image: hms_demo,
-    demo: 'https://github.com/Abhijeetdev07/Hospital-management-system',
-    github: 'https://github.com/Abhijeetdev07/Hospital-management-system',
+    title: 'Healthcare & Hospital SQL Analytics',
+    description: 'Advanced relational SQL database analysis answering 34 operational questions on patient admissions, physician workloads, allergies, and diagnoses.',
+    tags: ['SQL', 'MySQL', 'EDA', 'Database'],
+    image: medical_sql,
+    demo: 'https://github.com/Abhijeetdev07/medical_sql_project',
+    github: 'https://github.com/Abhijeetdev07/medical_sql_project',
   },
 ]
 
@@ -149,7 +149,7 @@ const ProjectCard = ({ project }) => {
       </div>
       <div className="mt-auto flex items-center gap-2 relative z-10">
         <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 min-[500px]:gap-1.5 justify-center px-2.5 min-[500px]:px-3 py-1.5 text-xs min-[500px]:text-sm rounded-md bg-[var(--theme-primary)] text-gray-900 font-semibold hover:bg-[var(--theme-light)] transition-colors">
-          Live Demo
+          View Project
           <FaExternalLinkAlt className="w-3 h-3 min-[500px]:w-3.5 min-[500px]:h-3.5" />
         </a>
         <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 min-[500px]:gap-1.5 justify-center px-2.5 min-[500px]:px-3 py-1.5 text-xs min-[500px]:text-sm rounded-md border-2 border-[var(--theme-primary)] text-[var(--theme-primary)] font-semibold hover:bg-[var(--theme-primary)] hover:text-gray-900 transition-colors">
@@ -167,7 +167,7 @@ const Projects = () => {
       <Snowfall color="#82C3D9" style={{ position: 'absolute', inset: 0, zIndex: 0 }} />
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="text-center mb-10 lg:mb-12">
-          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Projects</h2>
+          <h2 className="text-3xl min-[500px]:text-4xl md:text-5xl font-bold">Analytics Projects</h2>
           <div className="w-20 min-[500px]:w-24 h-1 bg-[var(--theme-primary)] mx-auto mt-2"></div>
         </div>
 
@@ -176,7 +176,7 @@ const Projects = () => {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView={'auto'}
-          initialSlide={2}
+          initialSlide={1}
           coverflowEffect={{
             rotate: 0,
             stretch: 50,

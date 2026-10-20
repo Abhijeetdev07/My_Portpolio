@@ -98,7 +98,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="mt-2 text-sm max-w-md" style={{ color: 'var(--text-primary)' }}>
-            Passionate MERN Developer. <br /> Building scalable web applications <br/> with  modern technologies.
+              Passionate Data Analyst. <br /> Transforming complex datasets into actionable <br /> business insights &amp; interactive dashboards.
             </p>
             <div className="mt-6 flex items-center gap-4">
               <a
